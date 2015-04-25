@@ -1,5 +1,7 @@
 package linkListQuestions;
 
+import java.util.HashSet;
+
 public class LinkList {
 	public Link first; 
 	
@@ -34,6 +36,24 @@ public class LinkList {
 			current = current.next;
 		}
 		System.out.println(" ");
+	}
+	
+	public void deleteDups(Link l1){
+		HashSet<Integer> hs = new HashSet<Integer>();
+		Link previous = null;
+		while(l1!= null){
+			if(hs.contains(l1.data)){
+				previous.next = l1.next;
+			}
+			
+			else{
+				hs.add(l1.data);
+				previous = l1;
+			}
+		l1 = l1.next;	
+		}
+		
+		
 	}
 	
 }

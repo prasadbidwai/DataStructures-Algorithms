@@ -1,6 +1,5 @@
 package linkListQuestions;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 
 public class Link {
