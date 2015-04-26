@@ -20,6 +20,12 @@ public class TreeApp {
 		
 		bst.inorder(bst.root);
 		
+		Node min = bst.getmin();
+		System.out.println("Smallest Element: "+min.data);
+		
+		Node max = bst.getMax();
+		System.out.println("Largest Element: "+max.data);
+		
 		
 	}
 	

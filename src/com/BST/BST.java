@@ -79,5 +79,33 @@ public class BST {
 		}
 	}
 	
+	public Node getmin(){
+	
+		Node current, last = null;
+		current = root;
+		
+		
+		while(current!= null){
+			last = current;
+			current = current.leftChild;
+				
+		}
+		
+		return last;
+	}
+	
+	public Node getMax(){
+		
+		Node current,last = null;
+		current = root;
+		
+		while( current!= null){
+			last = current;
+			current = current.rightChild;
+		}
+		return last;
+		
+	}
+	
 
 }
