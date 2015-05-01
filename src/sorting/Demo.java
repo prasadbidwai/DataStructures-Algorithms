@@ -8,6 +8,7 @@ public class Demo {
 		//s.selectSort();
 		//.s.bubbleSort();
 		//s.display();
+		s.bubbleSort();
 		System.out.println("now swlwction sort: ");
 		s.selectSort();
 		s.display();

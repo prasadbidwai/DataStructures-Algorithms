@@ -3,7 +3,8 @@ package sorting;
 public class Sort {
 	
 	int[] a = {7,8,9,4,3,2,5,1};
-	int in,out;
+	int in;
+	int out;
 
 	int len=a.length;
 	
