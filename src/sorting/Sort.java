@@ -23,7 +23,7 @@ public class Sort {
 
 	public void selectSort()
 	{
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 0; i < a.length-1; i++) {
 	        // Assume first element is min
 	      int  min = i;
 	        for (int j = i + 1; j < a.length; j++) {
