@@ -1,3 +1,6 @@
+
+//Find the pairs of elements in an Array having equal sum
+
 class findPairApp{
 
 	public static void main(String[] args) {
