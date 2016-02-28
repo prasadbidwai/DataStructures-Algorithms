@@ -1,5 +1,4 @@
-//Programs for the Reverse LinkList and Hash Operations 
-// HashMap operations: find pair of elements with same sum, find itinerary 
+// HashMap operations: find pair of elements with same sum, find itinerary given list of cities.  
 
 import java.io.*;
 import java.util.*;
