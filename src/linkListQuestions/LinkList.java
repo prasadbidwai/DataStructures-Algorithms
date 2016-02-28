@@ -56,4 +56,18 @@ public class LinkList {
 		
 	}
 	
+	public void reverseList()
+	{
+	  Link current = first;
+	  Link reversedPart = null;
+	  while(current!= null)
+	  {
+	    Link next = current.next;
+	    current.next = reversedPart;
+	    reversedPart = current; 
+	    current = next;
+	  }
+	  first = reversedPart;
+	}
+	
 }
