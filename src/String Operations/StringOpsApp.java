@@ -23,9 +23,17 @@ class Solution {
 
   System.out.println(chckUnique(chck));
   System.out.println(chckUnique(chck2)); 
-    
+
+  String orig = "sracecars";
+  System.out.println(isPalindrome(orig));
+
   }
-  
+
+public static boolean isPalindrome(String orig)
+{
+    return orig.equals(new StringBuilder(orig).reverse().toString());
+}  
+
 public static void stringCompres(String input){
     int cnt = 1; 
     char first = input.charAt(0);
@@ -43,17 +51,13 @@ public static void stringCompres(String input){
        cnt = 1;          
       }         
     }
- 
  sb.append(first);
  sb.append(cnt);
-  
  System.out.println("compressed String:  " + sb);   
 }
   
 public static boolean checkIfRotation(String s1, String s2)  {
-  
    s1 = s1+s1;
-  
   return(s1.contains(s2));
 }
 
