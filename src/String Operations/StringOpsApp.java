@@ -17,6 +17,12 @@ class Solution {
                     checkIfRotation(string2, string1));
     
   assert((checkIfRotation(string2, string1))) == true;
+
+  String chck = "parallel";
+  String chck2 = "uniqe";
+
+  System.out.println(chckUnique(chck));
+  System.out.println(chckUnique(chck2)); 
     
   }
   
@@ -50,5 +56,21 @@ public static boolean checkIfRotation(String s1, String s2)  {
   
   return(s1.contains(s2));
 }
+
+public static boolean chckUnique(String uniqueStr)  {
+      
+    boolean[] chckBoolean = new boolean[128] ;
+    
+    for (int i = 0 ; i < uniqueStr.length() ; i++){
+    
+      int val = uniqueStr.charAt(i);
+      System.out.println(val);
+      if(chckBoolean[val]){
+        return false;
+      }
+    chckBoolean[val] = true;
+    }
+    return true;
+    }
   
 }
