@@ -9,7 +9,6 @@ public class LinkListApp {
 	public static void main(){
 	LinkList l1 = new LinkList();
 
-	
 	l1.addfirst(2);
 	System.out.println("added first");
 	l1.addfirst(10);
