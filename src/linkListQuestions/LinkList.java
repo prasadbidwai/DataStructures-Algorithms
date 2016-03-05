@@ -30,7 +30,6 @@ public class LinkList {
 	
 	public void displayList() {
 		Link current = first;
-		
 		while(current != null){
 			current.displayLink();
 			current = current.next;
@@ -42,18 +41,16 @@ public class LinkList {
 		HashSet<Integer> hs = new HashSet<Integer>();
 		Link previous = null;
 		while(l1!= null){
-			if(hs.contains(l1.data)){
+			if(hs.contains(l1.data))
+			{
 				previous.next = l1.next;
 			}
-			
 			else{
 				hs.add(l1.data);
 				previous = l1;
 			}
 		l1 = l1.next;	
 		}
-		
-		
 	}
 	
 	public void reverseList()
@@ -69,5 +66,4 @@ public class LinkList {
 	  }
 	  first = reversedPart;
 	}
-	
 }
