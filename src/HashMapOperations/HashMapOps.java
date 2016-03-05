@@ -28,7 +28,6 @@ public void getItinerary(Map<String, String> test){
     start = to; 
     to = test.get(start);
   }
-  
 }
   
 public void findPairs(int[] test){
@@ -74,26 +73,10 @@ class HashMapOps{
         dataSet.put("Goa", "Chennai");
         dataSet.put("Delhi", "Goa");
     
-        HashProbs hp = new HashProbs();
+    HashProbs hp = new HashProbs();
     int[] pariArray = {3, 4, 7, 1, 12, 9};
     
     hp.findPairs(pariArray);
-    
     hp.getItinerary(dataSet);
-    
-    
-    LinkList l1 = new LinkList();
-    l1.insert(5);l1.insert(6);l1.insert(7);l1.insert(8);
-    System.out.println((l1.search(50))+ "  \n  ");
-    l1.printEntire();
-    //l1.deleteFirst();
-    System.out.println("  \n \n ");
-//    l1.printEntire();
- //   l1.deleteKey(6);
-    System.out.println("  \n \n ");
-    l1.printEntire();
-    l1.reverseList();
-    System.out.println("  \n \n ");
-    l1.printEntire();
   }
 }
