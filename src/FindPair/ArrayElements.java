@@ -3,18 +3,18 @@ import java.util.*;
 
 class ArrayElements{
 
-	
     boolean finddPair(int[] arr)
     {
         // Create an empty Hash to store mapping from sum to
         // pair indexes
         HashMap<Integer,Pair> map = new HashMap<Integer,Pair>();
         int n=arr.length;
- 
+        
         // Traverse through all possible pairs of arr[]
-       for (int i = 0; i < n-1; i++){
-       	for (int j = i+1; j < n-1; j++){
-
+       for (int i = 0; i < n-1; i++)
+       {
+       	for (int j = i+1; j < n-1; j++)
+       	{
        		int sum = arr[i] + arr[j];
        		if(!map.containsKey(sum))
        		{
