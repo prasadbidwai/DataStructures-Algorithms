@@ -39,16 +39,18 @@ public class NumberOfCircles {
 	Set<Integer> frndSet= friendsMapping.keySet();
 	
 	
-for(int key:frndSet){
+for(int key:frndSet)
+{
 		boolean isChecked1= isfrndChecked(key);
-			if(!isChecked1){
+			if(!isChecked1)
+			{
 				discoverFrnds(key);
 				numFrnds++;			
 			}
 }
 System.out.println("number of FriendCircles:"+ numFrnds);
 
-	}
+	}	//end of main method
 
 public static void discoverFrnds(int key){
 	if(!isfrndChecked(key)){
@@ -62,8 +64,10 @@ public static void discoverFrnds(int key){
 }
 
 
-private static boolean isfrndChecked(int key) {
-	if(friendsChecked.contains(key)){
+private static boolean isfrndChecked(int key) 
+{
+	if(friendsChecked.contains(key))
+	{
 		return true;
 	}
 	return false;
