@@ -16,17 +16,21 @@ public class NumberOfCircles {
 	
 
 	public static void main(){
-		int numFrnds = 0;
-		String[] friends = new String[5];
+	
+	int numFrnds = 0;
+	String[] friends = new String[5];
 	friends[0] = "YNNN";
 	friends[1] = "NYNN";
 	friends[2] = "NYNN";
 	friends[3] = "NNYN";
 	friends[4] = "NNNY";
 	
-	for(int i=0;i<friends.length;i++){
-		for(int j=0;j<friends.length;j++){
-			if( (friends[i].charAt(j) == 'Y')){
+	for(int i=0;i<friends.length;i++)
+	{
+		for(int j=0;j<friends.length;j++)
+		{
+			if( (friends[i].charAt(j) == 'Y'))
+			{
 					friendsMapping.get(i).add(j);
 			}
 		}
