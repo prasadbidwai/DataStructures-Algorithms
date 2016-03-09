@@ -49,7 +49,50 @@ public void findPairs(int[] test){
       }
     }
   }
-}  
+}
+
+ public int solution(int X) {
+        // write your code in Java
+        
+        TreeSet<Character> ts  = new TreeSet<Character>(); 
+        char[] charArray = String.valueOf(X).toCharArray();  
+        for(int i = 0 ; i < charArray.length-1 ; i ++)
+        {
+            if(charArray[i] == charArray[i+1])
+            {
+                if(!ts.contains(charArray[i]))
+                {
+                    ts.add(charArray[i]);    
+                }
+            }
+        }
+        
+        StringBuilder strngbldr = new StringBuilder();   
+     
+    int firstMin = ts.first();
+    int j;
+    
+    for( j = 0 ; j < charArray.length-1 ; j++){
+        
+        if(firstMin == (int)charArray[j] && firstMin == (int)charArray[j+1])
+        {
+            break;
+        }
+        else 
+        {
+            strngbldr.append(String.valueOf(charArray[j]));
+        }
+    }
+    
+    while(j < charArray.length-1)
+    {
+        strngbldr.append(String.valueOf(charArray[j+1]));
+        j++;
+    }
+    System.out.println(Integer.parseInt(new String(strngbldr)));
+    return Integer.parseInt(new String(strngbldr));
+    }
+     
 }
 
 class Pair{
