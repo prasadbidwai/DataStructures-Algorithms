@@ -1,5 +1,5 @@
 // progrms for String operations 
-// String operations: String compresion & check if rotation
+// String operations: 1. String compression, 2.Check if a String is rotation of other, 3.Check if String has unique chracters 
 
 import java.io.*;
 import java.util.*;
