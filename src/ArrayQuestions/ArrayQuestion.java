@@ -4,24 +4,18 @@
     import java.util.*;
 
     class ArrayQuestion {
-      public static void main(String[] args) {
+      public static void main(String[] args) 
+      {
 
         String orig = "sracecars";
         System.out.println(isPalindrome(orig));
-
+        
         int[] arr =   {1, 4,3};
         countIncreasingSubArr(arr);
         
         int[] arr2 = {3, 7, 90, 20, 10, 50, 40};
         int k = 3;
         MinAvgSubArray(arr2, k);
-        
-        String chck = "parallel";
-        String chck2 = "uniqe";
-
-        System.out.println(chckUnique(chck));
-        System.out.println(chckUnique(chck2)); 
-        
       }
 
       public static boolean isPalindrome(String orig){
