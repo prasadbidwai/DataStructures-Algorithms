@@ -83,23 +83,4 @@
        }
      System.out.println(" min average for subArray with subArrayLength:" + len + " is betwwen: "+ li + " " + (li+len-1));   
      }
-      
-      
-    public static boolean chckUnique(String uniqueStr)  {
-      
-    boolean[] chckBoolean = new boolean[128] ;
-    
-    for (int i = 0 ; i < uniqueStr.length() ; i++){
-    
-      int val = uniqueStr.charAt(i);
-      System.out.println(val);
-      if(chckBoolean[val]){
-        return false;
-      }
-    chckBoolean[val] = true;
-    }
-    return true;
-    }
-
-      
-    }
+}
