@@ -87,5 +87,80 @@ public void insertElement(int key)
 				}
 			}
 		}
+		
+		public boolean deleteElement(int key)
+		{
+			Node current = root;
+			Node parent = root;
+
+			boolean isLeftChild = false;
+
+			while(key != current.iData)
+			{
+				parent = current;
+
+				if(key < current.iData)
+				{
+					isLeftChild = true;
+					current = current.leftChild;
+				}
+				else
+				{
+					isLeftChild = false;
+					current = current.rightChild;
+				}
+
+				if(current == null)
+				{
+					return null
+				}
+			}
+
+			if(current.leftChild == null && current.rightChild == null)
+			{
+				if(isLeftChild)
+				{
+					parent.leftChild = null;
+				}
+				else
+				{
+					parent.rightChild = null;
+				}
+			}
+
+			else if (current.leftChild == null)
+			{
+				if (current == root) 
+				{
+					root = current.rightChild;	
+				}
+				if(isLeftChild)
+				{
+					parent.leftChild = current.rightChild
+				}
+				else
+				{
+					parent.rightChild = current.rightChild
+				}
+			}
+
+			else if(current.rightChild == null)
+			{
+				if (current == root) 
+				{
+					root = current.leftChild;
+				}
+
+				if (isLeftChild) {
+					parent.leftChild = current.leftChild;
+				}
+
+				else
+				{
+					parent.rightChild = current.leftChild;
+				}
+			}
+		return true;
+		}
 
 	}
