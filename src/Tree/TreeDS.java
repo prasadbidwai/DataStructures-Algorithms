@@ -6,7 +6,8 @@ class TreeDS{
 		root = null;
 	}
 
-	public void insert(int key){
+public void insertElement(int key)
+	{
 
 		Node newNode = new Node(key);
 
@@ -17,12 +18,13 @@ class TreeDS{
 		else
 		{
 			Node current = root;
+			Node parent;
+			while(true)
+			{
 
-			while(true){
-
-				Node parent = current;
-				if(key < root.iData){
-
+				parent = current;
+				if(key < current.iData)
+				{
 					current = current.leftChild;
 					if(current == null)
 					{
@@ -30,7 +32,8 @@ class TreeDS{
 						return;
 					}
 				}
-				else{
+				else
+				{
 					current = current.rightChild;
 
 					if(current == null)
@@ -38,36 +41,30 @@ class TreeDS{
 						parent.rightChild = newNode;
 						return;
 					}
-
 				}
 			}
-		}
-
-		public Node find(int key){
-
-			Node current = root;
-			
-			if (key == root.iData){
-				return root;
-			}
-			else{
-			
-			while(key != current.iData){
-
-				if(key < current.iData){
-					current = current.leftChild;
-				}
-
-				else{
-					current = current.rightChild;
-				}
-			}
-
-			if(current == null){
-				return null;
-			}
-			}
-		return current;
 		}
 	}
-}
+
+		public Node findElement(int key)
+		{
+			Node current = root;
+				while(current.iData!= key)
+				{
+					if(key < current.iData)
+					{
+						current = current.leftChild;
+					}
+					else
+					{
+						current = current.rightChild;
+					}
+					if(current == null)
+					{
+						return null;
+					}
+				}
+			return current;
+		}
+
+	}
