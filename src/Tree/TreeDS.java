@@ -66,5 +66,26 @@ public void insertElement(int key)
 				}
 			return current;
 		}
+		
+		public void printLevelWise()
+		{
+			Queue<Node> qn = new LinkedList<Node>();
+			qn.add(root);
+
+			while(!qn.isEmpty())
+			{
+				Node tempNode = qn.remove();
+				System.out.println(tempNode.iData + " ");				
+			
+				if(tempNode.leftChild != null)
+				{
+					qn.add(tempNode.leftChild);
+				}
+				if(tempNode.rightChild != null)
+				{
+					qn.add(tempNode.rightChild);
+				}
+			}
+		}
 
 	}
