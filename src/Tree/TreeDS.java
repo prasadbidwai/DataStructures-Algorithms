@@ -88,7 +88,7 @@ public void insertElement(int key)
 			}
 		}
 		
-	public boolean delete(int key)
+	public boolean deleteElement(int key)
 	{
 		TheNode current = root;
 		TheNode parent = root;
