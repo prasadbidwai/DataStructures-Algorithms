@@ -88,79 +88,106 @@ public void insertElement(int key)
 			}
 		}
 		
-		public boolean deleteElement(int key)
+	public boolean delete(int key)
+	{
+		TheNode current = root;
+		TheNode parent = root;
+
+		boolean isLeftChild = true;
+
+		while(current.iData != key)	
 		{
-			Node current = root;
-			Node parent = root;
-
-			boolean isLeftChild = false;
-
-			while(key != current.iData)
+			if(key < current.iData)
 			{
-				parent = current;
-
-				if(key < current.iData)
-				{
-					isLeftChild = true;
-					current = current.leftChild;
-				}
-				else
-				{
-					isLeftChild = false;
-					current = current.rightChild;
-				}
-
-				if(current == null)
-				{
-					return null
-				}
+				current = current.leftChild;
+				isLeftChild =true;
 			}
 
-			if(current.leftChild == null && current.rightChild == null)
+			else
 			{
-				if(isLeftChild)
-				{
-					parent.leftChild = null;
-				}
-				else
-				{
-					parent.rightChild = null;
-				}
+				current = current.rightChild;
+				isLeftChild =false;
 			}
-
-			else if (current.leftChild == null)
+			
+			if (current == null) 
 			{
-				if (current == root) 
-				{
-					root = current.rightChild;	
-				}
-				if(isLeftChild)
-				{
-					parent.leftChild = current.rightChild
-				}
-				else
-				{
-					parent.rightChild = current.rightChild
-				}
+				return false;	
 			}
-
-			else if(current.rightChild == null)
-			{
-				if (current == root) 
-				{
-					root = current.leftChild;
-				}
-
-				if (isLeftChild) {
-					parent.leftChild = current.leftChild;
-				}
-
-				else
-				{
-					parent.rightChild = current.leftChild;
-				}
-			}
-		return true;
 		}
+
+		if(current.leftChild == null && current.rightChild == null)
+		{
+			if(current == root)
+			{
+				root = null;
+			}
+
+			else if(isLeftChild)
+			{
+				parent.leftChild = null;
+			}
+
+			else
+			{
+				parent.rightChild =null;
+			}
+
+		}
+
+		else if(current.leftChild == null)
+		{
+			if (current == root)
+			{
+				root =current.rightChild;
+			}
+			else if(isLeftChild)
+			{
+				parent.leftChild = current.rightChild;
+			}
+			else
+			{
+				parent.rightChild =current.rightChild;
+			}
+		}
+
+		else if(current.rightChild == null)
+		{
+			if(current == root)
+			{
+				root = current.leftChild;
+			}
+
+			else if (isLeftChild)
+			{
+				parent.leftChild = current.leftChild;
+			}
+			else
+			{
+				parent.rightChild = current.rightChild;
+			}
+		}
+
+		else
+		{
+
+			TheNode succesor = getSuccsor(current);
+
+			if (current == root) 
+			{
+					root = succesor;
+			}
+			else if (isLeftChild)
+			{
+				parent.leftChild = succesor;
+			}
+			else
+			{
+				parent.rightChild = succesor;
+			}
+		succesor.leftChild = current.leftChild
+		}
+	
+	return true;
+	}
 
 	}
