@@ -1,4 +1,5 @@
-// HashMap operations: find pair of elements with same sum, find itinerary given list of cities.  
+// HashMap operations: find pair of elements with same sum, find itinerary given list of cities.
+// HashMap operations: To find the symmetric array elements  
 
 import java.io.*;
 import java.util.*;
