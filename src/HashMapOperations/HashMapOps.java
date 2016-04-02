@@ -144,7 +144,8 @@ class HashMapOps{
         dataSet.put("Goa", "Chennai");
         dataSet.put("Delhi", "Goa");
     
-    HashProbs hp = new HashProbs();
+    HashProbs hp = new HashProbs();   // class instanciation for calling its funcions from the main method. 
+
     int[] pariArray = {3, 4, 7, 1, 12, 9};
     
     hp.findPairs(pariArray);
