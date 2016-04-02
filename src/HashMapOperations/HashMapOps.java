@@ -29,7 +29,35 @@ public void getItinerary(Map<String, String> test){
     to = test.get(start);
   }
 }
-  
+
+
+  public static void findSymmtricPairs(int[][] test)
+  {
+
+    HashMap<Integer, Integer> theMap= new HashMap<Integer, Integer>();
+
+    for (int i = 0 ; i < test.length ;i++ ) 
+    {
+
+      Integer first, sec;
+
+      first = test[i][0];
+      sec = test[i][1];
+
+      Integer val = theMap.get(sec);  
+          
+      if(val == first)
+      {
+        System.out.println("the pairs are: " + first + "  " + sec); 
+      }
+
+      else
+      {
+        theMap.put(first, sec);
+      } 
+    }
+  }
+
 public void findPairs(int[] test){
  
   Map<Integer, Pair> fpmap = new HashMap<Integer, Pair>();
