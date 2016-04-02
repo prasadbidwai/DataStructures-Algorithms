@@ -39,7 +39,6 @@ public void getItinerary(Map<String, String> test){
 
     for (int i = 0 ; i < test.length ;i++ ) 
     {
-
       Integer first, sec;
 
       first = test[i][0];
@@ -57,6 +56,46 @@ public void getItinerary(Map<String, String> test){
         theMap.put(first, sec);
       } 
     }
+
+  }
+
+  public static int largestZeroSumSubArray(int[] array)
+  {
+    HashMap<Integer, Integer> newhm = new HashMap<Integer, Integer>();
+
+    int sum = 0;
+    int maxlen = 0;
+    
+    for(int i = 0 ; i < array.length ; i++)
+    {
+      sum += array[i];
+
+      if(sum == 0)
+      {
+        maxlen = i++;
+      }
+
+      if(array[i] == 0 && maxlen == 0)
+      {
+        maxlen = 1;
+      }
+
+      Integer val = newhm.get(sum);
+      int previous_i;
+
+      if( val!= null)
+      {
+        previous_i = newhm.get(sum);
+        maxlen = Math.max(maxlen,i-previous_i);
+      }
+
+      else
+      {
+        newhm.put(sum, i);
+      }
+    }
+
+    return  maxlen;
   }
 
 public void findPairs(int[] test){
@@ -82,7 +121,7 @@ public void findPairs(int[] test){
         }
     }
   }
-  
+
 }
 
  public int solution(int X) {
