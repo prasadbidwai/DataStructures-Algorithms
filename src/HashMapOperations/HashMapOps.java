@@ -62,22 +62,27 @@ public void getItinerary(Map<String, String> test){
 public void findPairs(int[] test){
  
   Map<Integer, Pair> fpmap = new HashMap<Integer, Pair>();
-  for(int i = 0 ; i < test.length ; i ++){
-    for(int j = i+1 ; j < test.length ; j++){
+  
+  for(int i = 0 ; i < test.length ; i ++)
+  {
+    for(int j = i+1 ; j < test.length ; j++)
+    {
         int sum = test[i] + test[j];
       
-      if(!fpmap.containsKey(sum)){
-        fpmap.put(sum, new Pair(i, j));
-      }
+        if(!fpmap.containsKey(sum))
+        {
+          fpmap.put(sum, new Pair(i, j));
+        }
       
-      else
-      {
-        Pair p = fpmap.get(sum); 
-        System.out.println("the pairs with the same sum " + sum +" is: \n " +
-              "("+test[i]+ ","+ test[j]+")"+ "(" + test[p.first] + "," +                                     test[p.second] + " )");
-      }
+        else
+        {
+          Pair p = fpmap.get(sum); 
+          System.out.println("the pairs with the same sum " + sum +" is: \n " +
+                "("+test[i]+ ","+ test[j]+")"+ "(" + test[p.first] + "," + test[p.second] + " )");
+        }
     }
   }
+  
 }
 
  public int solution(int X) {
