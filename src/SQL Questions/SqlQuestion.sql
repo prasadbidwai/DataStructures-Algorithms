@@ -81,3 +81,28 @@ and
     r.DepartmentId = f.DepartmentId 
 and 
     f.DepartmentId = d.id 
+
+
+/*
+3. Nth Highest Salary:
+
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+*/
+
+
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+    set N= N-1;
+  RETURN (
+      # Write your MySQL query statement below.
+   
+      select distinct Salary from Employee order by Salary desc limit N,1
+  );
+END
+
