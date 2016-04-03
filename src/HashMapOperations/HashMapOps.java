@@ -1,34 +1,36 @@
 // HashMap operations: find pair of elements with same sum, find itinerary given list of cities.
-// HashMap operations: To find the symmetric array elements  
+// HashMap operations: To find the symmetric array elements, to find the largest sub array with zero sum.   
 
 import java.io.*;
 import java.util.*;
 
+class HashProbs
+{
 
-class HashProbs{
-public void getItinerary(Map<String, String> test){
+public void getItinerary(Map<String, String> test)
+{
 
-  String start = null;
-  Map<String, String> rm = new HashMap<String, String>();
-  
-  for(Map.Entry<String, String> it: test.entrySet()){
-    rm.put(it.getValue(), it.getKey());
-  } 
-  
-  for(Map.Entry<String, String> itt: test.entrySet()){
-    if(!rm.containsKey(itt.getKey())){
-      start = itt.getKey();
-      break;
+    String start = null;
+    Map<String, String> rm = new HashMap<String, String>();
+    
+    for(Map.Entry<String, String> it: test.entrySet()){
+      rm.put(it.getValue(), it.getKey());
+    } 
+    
+    for(Map.Entry<String, String> itt: test.entrySet()){
+      if(!rm.containsKey(itt.getKey())){
+        start = itt.getKey();
+        break;
+      }
     }
-  }
-  
-  String to = test.get(start);
-  
-  while(to!= null){
-    System.out.println(start + " --> " + to);
-    start = to; 
-    to = test.get(start);
-  }
+    
+    String to = test.get(start);
+    
+    while(to!= null){
+      System.out.println(start + " --> " + to);
+      start = to; 
+      to = test.get(start);
+    }
 }
 
 
@@ -198,6 +200,9 @@ class HashMapOps{
 
     int arr[][]= {{11, 20}, {30, 40}, {5, 10}, {40, 30}, {10, 5}};
     hp.findSymmtricPairs(arr);
+
+    int arr1[] = {15, -2, 2, -8, 1, 7, 10, -12, 2, 23};
+    System.out.println("the length of the largest sub array with zero sum is: " + hp.largestZeroSumArray(arr1));    
 
   }
 }
