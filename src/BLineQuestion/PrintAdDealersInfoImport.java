@@ -1,32 +1,11 @@
-package BLineQuestion;
-
-/**
- * 
- */
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author Amit
- *
- */
 public class PrintAdDealersInfoImport {
-/*
-	//table name
-	static final String read_table = "printad.print_ad_frequency";
-	static final String write_table = "printad.print_ad_dealers_info";
-	
-	//column names: dealer_mnfr_id, dealer_id, dealer_name, dealer_brand, base_url
-	static final String DEALER_MNFR_ID = "dealer_mnfr_id";
-	static final String DEALER_ID = "dealer_id";
-	static final String DEALER_NAME = "dealer_name";
-	static final String DEALER_BRAND = "dealer_brand";
-	static final String DEALER_BASE_URL = "base_url";
-	*/
+
 	static Hashtable<Integer, List<Integer>> studentFriendsMapping = new Hashtable<Integer, List<Integer>>();
 	static HashSet<Integer> studentsChecked = new HashSet<Integer>();
 	static int circlesCount = 0;
