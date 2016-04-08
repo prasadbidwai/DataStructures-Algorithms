@@ -15,44 +15,46 @@ public class NumberOfCircles {
 	public static HashSet<Integer> friendsChecked= new HashSet<Integer>();
 	
 
-	public static void main(){
-	
-	int numFrnds = 0;
-	String[] friends = new String[5];
-	friends[0] = "YNNN";
-	friends[1] = "NYNN";
-	friends[2] = "NYNN";
-	friends[3] = "NNYN";
-	friends[4] = "NNNY";
-	
-	for(int i=0;i<friends.length;i++)
+	public static void main()
 	{
-		for(int j=0;j<friends.length;j++)
+	
+		int numFrnds = 0;
+		String[] friends = new String[5];
+		friends[0] = "YNNN";
+		friends[1] = "NYNN";
+		friends[2] = "NYNN";
+		friends[3] = "NNYN";
+		friends[4] = "NNNY";
+		
+		for(int i=0;i<friends.length;i++)
 		{
-			if( (friends[i].charAt(j) == 'Y'))
+			for(int j=0;j<friends.length;j++)
 			{
-					friendsMapping.get(i).add(j);
+				if( (friends[i].charAt(j) == 'Y'))
+				{
+						friendsMapping.get(i).add(j);
+				}
 			}
 		}
-	}
-	
-	Set<Integer> frndSet= friendsMapping.keySet();
-	
-	
-for(int key:frndSet)
-{
-		boolean isChecked1= isfrndChecked(key);
-			if(!isChecked1)
-			{
-				discoverFrnds(key);
-				numFrnds++;			
-			}
-}
-System.out.println("number of FriendCircles:"+ numFrnds);
+		
+		Set<Integer> frndSet= friendsMapping.keySet();
+		
+		for(int key:frndSet)
+		{
+				boolean isChecked1= isfrndChecked(key);
+					if(!isChecked1)
+					{
+						discoverFrnds(key);
+						numFrnds++;			
+					}
+		}
+
+		System.out.println("number of FriendCircles:"+ numFrnds);
 
 	}	//end of main method
 
-public static void discoverFrnds(int key){
+public static void discoverFrnds(int key)
+{
 	if(!isfrndChecked(key)){
 		friendsChecked.add(key);
 		List<Integer> num= friendsMapping.get(key);
@@ -74,7 +76,4 @@ private static boolean isfrndChecked(int key)
 }
 
 	
-
-
-
 }	
