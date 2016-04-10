@@ -144,3 +144,7 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 +----------+
 | Joe      |
 +----------+*/
+
+select a.Name as Employee
+from Employee a, Employee b
+where a.ManagerId = b.Id and a.Salary > b.salary
