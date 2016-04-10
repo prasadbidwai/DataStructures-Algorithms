@@ -43,7 +43,7 @@ from
 where  
     emp.DepartmentId=dep.Id 
 and  
-(Select count(distinct Salary) From Employee where DepartmentId=dep.Id and Salary>emp.Salary)<3
+(Select count(distinct Salary) From Employee where DepartmentId=dep.Id and Salary>emp.Salary)<3;
 
 
 -- 2. Department wise highest salary 
@@ -80,8 +80,7 @@ where
 and 
     r.DepartmentId = f.DepartmentId 
 and 
-    f.DepartmentId = d.id 
-
+    f.DepartmentId = d.id;
 
 /*
 3. Nth Highest Salary:
