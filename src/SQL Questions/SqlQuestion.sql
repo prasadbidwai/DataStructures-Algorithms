@@ -1,7 +1,5 @@
 
--- 1. find top 3 salaries per department
-
-/*
+/* 1. find top 3 salaries per department
 Employee table:
 +----+-------+--------+--------------+
 | Id | Name  | Salary | DepartmentId |
