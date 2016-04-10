@@ -147,4 +147,4 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 
 select a.Name as Employee
 from Employee a, Employee b
-where a.ManagerId = b.Id and a.Salary > b.salary
+where a.ManagerId = b.Id and a.Salary > b.salary;
