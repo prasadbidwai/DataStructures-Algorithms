@@ -147,7 +147,8 @@ select a.Name as Employee
 from Employee a, Employee b
 where a.ManagerId = b.Id and a.Salary > b.salary;
 
-/*Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
+/*
+6. Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
 
 +----+------------------+
 | Id | Email            |
@@ -159,3 +160,10 @@ where a.ManagerId = b.Id and a.Salary > b.salary;
 Id is the primary key column for this table.
 
 */
+
+delete p1
+from
+Person p1, Person p2
+where 
+p1.Id > p2.Id and
+p1.Email = p2.Email
