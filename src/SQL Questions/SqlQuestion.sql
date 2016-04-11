@@ -146,3 +146,16 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 select a.Name as Employee
 from Employee a, Employee b
 where a.ManagerId = b.Id and a.Salary > b.salary;
+
+/*Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
+
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id is the primary key column for this table.
+
+*/
