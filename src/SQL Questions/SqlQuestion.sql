@@ -195,5 +195,10 @@ Answer should be like:
 | 3.65  | 3    |
 | 3.50  | 4    |
 +-------+------+
-
 */
+
+SELECT
+  Score,
+  (SELECT count(distinct Score) FROM Scores WHERE Score >= s.Score) Rank
+FROM Scores s
+ORDER BY Score desc
