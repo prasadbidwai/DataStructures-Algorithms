@@ -38,3 +38,14 @@ class ExceptionDemo
 	}
 }
 //End of program that creates a custom exception type.
+/*
+
+Output: 
+
+Called compute(1)
+Normal exit
+Called compute(20)
+Caught MyException[20]
+
+*/
+
