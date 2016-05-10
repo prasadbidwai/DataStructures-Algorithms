@@ -54,8 +54,10 @@ End of program that creates a custom exception type.*/
 
 class ExceptionClass 
 {
-
-	static void throwOne() throws IllegalAccessException 
+	/*illegalAccessException is checked exception type of exception hence  
+	is to be mentioned as throws by method that throws it(elese compiler will complain)*/
+	
+	static void throwOne() throws IllegalAccessException 				
 	{
 		System.out.println("Inside throwOne.");
 		throw new IllegalAccessException("demo");
