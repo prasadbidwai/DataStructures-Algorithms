@@ -1,4 +1,4 @@
-//******************* Example of custom exception.
+//******************* Example of custom exception *******************
 
 class MyException extends Exception 
 {
@@ -46,15 +46,15 @@ Normal exit
 Called compute(20)
 Caught This is custom generatd MyException[20]
 
-End of program that creates a custom exception type.*/
+ ******************* End of program that creates a custom exception type  ******************* /
 
 
 
-//******************* Example of a Checked Exception *******************
+//******************* Example of a Checked Exception *******************/
 
 class ExceptionClass 
 {
-	/*illegalAccessException is checked exception type of exception hence  
+	/*illegalAccessException is checked exception type of exception and hence  
 	is to be mentioned as throws by method that throws it(elese compiler will complain)*/
 
 	static void throwOne() throws IllegalAccessException 				
@@ -79,4 +79,4 @@ class ExceptionClass
 Inside throwOne.
 error thrown is: java.lang.IllegalAccessException: demo
 
-*/
+********************End of Example of a Checked Exception *******************/
