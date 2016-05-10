@@ -1,5 +1,4 @@
 //This program creates a custom exception type.
-
 class MyException extends Exception 
 {
 	private int detail;
@@ -38,3 +37,4 @@ class ExceptionDemo
 			}
 	}
 }
+//End of program that creates a custom exception type.
