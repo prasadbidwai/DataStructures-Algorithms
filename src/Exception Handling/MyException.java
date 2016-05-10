@@ -56,7 +56,7 @@ class ExceptionClass
 {
 	/*illegalAccessException is checked exception type of exception hence  
 	is to be mentioned as throws by method that throws it(elese compiler will complain)*/
-	
+
 	static void throwOne() throws IllegalAccessException 				
 	{
 		System.out.println("Inside throwOne.");
@@ -72,6 +72,11 @@ class ExceptionClass
 				System.out.println("error thrown is: " + e);
 			}
 		}
-
 }
 
+/*output: 
+
+Inside throwOne.
+error thrown is: java.lang.IllegalAccessException: demo
+
+*/
