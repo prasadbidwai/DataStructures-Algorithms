@@ -87,7 +87,37 @@ public void insertElement(int key)
 				}
 			}
 		}
-		
+	
+	public void InOrder(Node Localroot)
+	{
+		if(Localroot != null)
+		{
+			InOrder(Localroot.leftChild);
+			System.out.println(Localroot.iData);
+			InOrder(Localroot.rightChild);
+		}
+	}
+
+	public void PreOrder(Node Localroot)
+	{
+		if(Localroot != null)
+		{
+			System.out.println(Localroot.iData);
+			PreOrder(Localroot.leftChild);
+			PreOrder(Localroot.rightChild);
+		}
+	}
+
+	public void PostOrder(Node Localroot)
+	{
+		if(Localroot != null)
+		{
+			PostOrder(Localroot.leftChild);
+			PostOrder(Localroot.rightChild);
+			System.out.println(Localroot.iData);
+		}
+	}
+
 	public boolean deleteElement(int key)
 	{
 		TheNode current = root;
