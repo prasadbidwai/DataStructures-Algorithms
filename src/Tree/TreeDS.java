@@ -193,7 +193,7 @@ public void insertElement(int key)
 			}
 			else
 			{
-				parent.rightChild = current.rightChild;
+				parent.rightChild = current.leftChild;
 			}
 		}
 
