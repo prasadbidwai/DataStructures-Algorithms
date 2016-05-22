@@ -9,7 +9,7 @@ class Solution {
 //        int[] secondProb =  {1, 2, 3, 4, 5, 6, 7,8,9}; // 8 1 7 2 6 3 5 4
 //        maxMin(secondProb);
         int prob = 223336226;
-        System.out.println("the answer of google question: " + solution2(prob));
+        System.out.println("the answer of interview question: " + solution2(prob));
     }
 
     public static int solution2(int X) {
