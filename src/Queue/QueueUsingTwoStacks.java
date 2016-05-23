@@ -2,7 +2,7 @@ public class QueueUsingTwoStacks<E>
 {
 
     private Stack<Integer> inbox = new Stack<Integer>();
-    private Stack<E> outbox = new Stack<E>();
+    private Stack<Integer> outbox = new Stack<Integer>();
 
     public void queue(E item) {
         inbox.push(item);
