@@ -33,14 +33,14 @@
           }
           
           else{
-            cnt = ((len*(len-1))/2);
+            cnt += ((len*(len-1))/2);
             len = 1;
           }
              
         }
         
         if(len > 1 )
-          cnt = ((len*(len-1))/2);
+          cnt += ((len*(len-1))/2);
         
         System.out.println(cnt);
         
