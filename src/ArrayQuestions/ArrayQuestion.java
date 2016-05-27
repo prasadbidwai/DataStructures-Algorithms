@@ -16,6 +16,11 @@
         int[] arr2 = {3, 7, 90, 20, 10, 50, 40};
         int k = 3;
         MinAvgSubArray(arr2, k);
+
+        // Given an array A[] and a number x, check for pair in A[] with sum as x
+        int A[] = {1, 4, 45, 6, 10, 8};
+        int n = 16;
+        printpairs(A,  n);
       }
 
       public static boolean isPalindrome(String orig){
@@ -60,13 +65,14 @@
      public static void MinAvgSubArray(int[] arra, int len) {
        int minSum = 0;
        int li = 0;
-       
-       for (int i = 0; i < len ; i++){
-         minSum += arra[i];
-       }
-       
        int currentSum = 0;
        
+       for (int i = 0; i < len ; i++){
+         currentSum += arra[i];
+       }
+       
+       minSum = currentSum;
+
        for (int j = len; j < arra.length ; j++ ){
           currentSum += arra[j] - arra[j - len]     ;
          
@@ -77,4 +83,25 @@
        }
      System.out.println(" min average for subArray with subArrayLength:" + len + " is betwwen: "+ li + " " + (li+len-1));   
      }
+
+// Given an array A[] and a number x, check for pair in A[] with sum as x
+  static void printpairs(int arr[],int sum)
+  {
+    
+    // Declares and initializes the whole array as false
+    boolean[] binmap = new boolean[MAX];
+   
+    for (int i=0; i<arr.length; ++i)
+    {
+        int temp = sum-arr[i];
+   
+        // checking for condition
+        if (temp>=0 && binmap[temp])
+        {
+        System.out.println("Pair with given sum " +sum + " is (" + arr[i] +", "+temp+")");
+        }
+              binmap[arr[i]] = true;
+    }
+  }
+
 }
