@@ -1,5 +1,12 @@
-// progrms for String operations 
-// String operations: 1. String compression, 2.Check if a String is rotation of other, 3.Check if String has unique chracters 
+/* 
+progrm for String operations 
+
+String operations: 
+1. find longest palindromic substring 
+2. String compression, 
+3. Check if a String is rotation of other, 
+4. Check if String has unique chracters 
+*/
 
 import java.io.*;
 import java.util.*;
