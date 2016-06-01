@@ -27,7 +27,60 @@ class Solution {
   String orig = "sracecars";
   System.out.println(isPalindrome(orig));
 
+  // call to function to find the longest palindromic substring 
+  System.out.println(longestPalindromeString("1234"));
+  System.out.println(longestPalindromeString("12321"));
+  System.out.println(longestPalindromeString("9912321456"));
+  System.out.println(longestPalindromeString("9912333321456"));
+  System.out.println(longestPalindromeString("12145445499"));
+  // end of call to function to find the longest palindromic substring
+
   }
+
+//code for longest palindromic substring
+public static String longestPalindromeString(String s)
+{
+  String longest = s.substring(0,1);
+  
+
+  for (int i = 0 ; i < s.length(); i++)
+  {
+    //to check the odd length palindromes (aba // abcba)
+    String palindrome = IntermediatePalins(s,i,i);
+
+    if(palindrome.length() > longest.length())
+    {
+        longest = palindrome;
+    }
+
+    //to check the even length palindromes (abba // bbccbb)
+    palindrome = IntermediatePalins(s,i , i+1);
+
+    if(palindrome.length() > longest.length())
+    {
+      longest = palindrome;
+    }
+  
+  }
+
+  return longest;
+}
+
+public static String IntermediatePalins(String s, int left, int right)
+{
+  if (left > right)
+    return null;
+
+  while(left >=0 && right < s.length() && s.charAt(left) == s.charAt(right))
+  { 
+      left--;
+      right++;  
+  }
+  
+  return s.substring(left+1, right);
+}  
+// End of logic for longest palindromic substring
+
 
 public static boolean isPalindrome(String orig)
 {
