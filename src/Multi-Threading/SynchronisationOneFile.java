@@ -33,15 +33,19 @@ static class Caller implements Runnable
 	public void run() 			
 	{
 		
-		target.call(msg);	//call to method w/o synchronized keyword.
+	//	target.call(msg);	//call to method w/o synchronized keyword.
 
-		target.synchronizedCall(msg);	//call to method with synchronized keyword.
+	//	target.synchronizedCall(msg);	//call to method with synchronized keyword.
+
+		synchronized(target) { 		 // synchronized block (one more way to avoid race condition by guarding the call to the unsynchronized method by unsynchronized block)
+			target.call(msg);
+		}
 	}
 }	
 	
 static class Callme{
 	//Method w/o synchronized keyword.
-	void call(String msg)	
+	void call(String msg) 	
 	{
 
 		System.out.print("[ "+ msg);
@@ -54,7 +58,7 @@ static class Callme{
 		System.out.println("]");
 	}
 
-	//Method with synchronized keyword.
+	//Method with synchronized keyword (this will help avoid race condition by allowing exclusively only one thread have access to this method )
 	synchronized void synchronizedCall(String msg)
 	{
 		System.out.print("[ "+ msg);
@@ -73,17 +77,27 @@ static class Callme{
 /*
 Output:
 
-// output for the method w/o synchronized method:
+these 3 different outputs from this program when each method from run is un commented and run one at a time: 
 
-c:\Data Structures\Multi-Threading\Synchronisation>java SynchronisationOneFile
+//output when the call() method(unsynchronized) is called: 
+
 [ Synchronised[ World !![ Hello]
 ]
 ]
+(In this case, nothing exists to stop all three threads from calling the same method, on the same object,
+at the same time. This is known as a race condition, because the three threads are racing each
+other to complete the method.)
 
-// output for the synchronized method: 
 
-[ World !!]				
-[ Synchronised]
+// output for the synchronized method (THE METHOD DEFINITION IS GUARDED BY SYNCHRONIZED KEYWORD.): 
 [ Hello]
+[ Synchronised]
+[ World !!]
+
+//	output when non synchronized method(call()) is called from inside a synchronized block.
+
+[ Hello]
+[ World !!]
+[ Synchronised]
 
 */
