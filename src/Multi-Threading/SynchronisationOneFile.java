@@ -37,9 +37,11 @@ static class Caller implements Runnable
 
 	//	target.synchronizedCall(msg);	//call to method with synchronized keyword.
 
-		synchronized(target) { 		 // synchronized block (one more way to avoid race condition by guarding the call to the unsynchronized method by unsynchronized block)
-			target.call(msg);
-		}
+	synchronized(target) // synchronized block (an approach to avoid race condition by guarding the call to the unsynchronized method by synchronized block) 
+	{ 	
+		target.call(msg);
+	}
+	
 	}
 }	
 	
