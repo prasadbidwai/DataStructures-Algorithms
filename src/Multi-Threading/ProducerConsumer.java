@@ -1,3 +1,8 @@
+/*
+This is a program to demonstrate thread synchronisation using wait & notify methods
+
+*/
+
 class ProducerConsumer
 {
 
