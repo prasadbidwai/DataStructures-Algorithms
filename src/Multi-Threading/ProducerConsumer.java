@@ -26,7 +26,6 @@ class ProducerConsumer
 					System.out.println("Interrupted execution: "+ e);
 				}
 			
-
 			this.n = n;
 			flag = true;
 			System.out.println("put : "+ n);
