@@ -21,7 +21,7 @@ class Main
   
         // instance of String type
         Test <String> sObj =
-                          new Test<String>("GeeksForGeeks");
+                          new Test<String>("Test String");
         System.out.println(sObj.getObject());
     }
 }
@@ -30,7 +30,7 @@ class Main
 Output:
 
 15
-GeeksForGeeks
+Test String
 
 */
 
@@ -78,7 +78,7 @@ class Main
 Output:
 
 15
-GeeksForGeeks
+Test String
 */
 
 // A Simple Java program to show working of user defined
@@ -100,7 +100,7 @@ class Test
         genericDisplay(11);
   
         // Calling generic method with String argument
-        genericDisplay("GeeksForGeeks");
+        genericDisplay("Test String");
   
         // Calling generic method with double argument
         genericDisplay(1.0);
@@ -112,7 +112,7 @@ class Test
 Output :
 
 java.lang.Integer = 11
-java.lang.String = GeeksForGeeks
+java.lang.String = Test String
 java.lang.Double = 1.0
 
 */
