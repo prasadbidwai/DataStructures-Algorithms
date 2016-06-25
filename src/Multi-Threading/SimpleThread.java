@@ -28,6 +28,17 @@ class SimpleThread //extends Thread
 
 }
 
+/* Output:
+
+the name of the curent thread: customThread
+Thread ID: 11
+thread priority is:5
+thread group: java.lang.ThreadGroup[name=main,maxpri=10]
+thread state: RUNNABLE
+thread maxPriority: 10
+
+*/
+
 //Simple thread Example Using Runnable Interface: 
 
 public class MyRunnable implements Runnable
@@ -45,3 +56,9 @@ public class MyRunnable implements Runnable
 	
 	}
 }
+
+/*
+output:
+
+Executing thread myRunnable
+*/
