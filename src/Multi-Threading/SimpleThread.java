@@ -30,18 +30,18 @@ class SimpleThread //extends Thread
 
 //Simple thread Example Using Runnable Interface: 
 
-// public class MyRunnable implements Runnable
-// {
-// 	public void run() 
-// 	{
-// 		System.out.println("Executing thread "+Thread.currentThread().getName());
-// 	}
+public class MyRunnable implements Runnable
+{
+	public void run() 
+	{
+		System.out.println("Executing thread "+Thread.currentThread().getName());
+	}
 
-// 	public static void main(String[] args) throws InterruptedException 
-// 	{
+	public static void main(String[] args) throws InterruptedException 
+	{
 	
-// 		Thread myThread = new Thread(new MyRunnable(), "myRunnable");
-// 		myThread.start();
+		Thread myThread = new Thread(new MyRunnable(), "myRunnable");
+		myThread.start();
 	
-// 	}
-// }
+	}
+}
