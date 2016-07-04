@@ -14,23 +14,33 @@ class NodeApp{
 		td.insertElement(13);
 
 		Node found = td.findElement(17);
-		System.out.println(found);	
-		System.out.println("\n\n");
+		System.out.println("\nsearch for the element 17: "+ found);	
+		System.out.println("\n");
 
-		System.out.println("levelWise printing:: \n");
+		System.out.println("levelWise printing:: ");
 
 		td.printLevelWise();
+		System.out.println("\n");
 
-		System.out.println("now traversing PreOrder:: \n");
+		System.out.println("now traversing PreOrder:: ");
 
 		td.PreOrder(td.root);
+		System.out.println("\n");
 		
-		System.out.println("now traversing Inorder:: \n");
+		System.out.println("now traversing Inorder:: ");
 
-		td.InOrder(td.root);		
+		td.InOrder(td.root);
 
-		System.out.println("now traversing PostOrder:: \n");
+		System.out.println("\n");				
+
+		System.out.println("now traversing PostOrder:: ");
 
 		td.PostOrder(td.root);
+
+		int n1 = 8;
+		int n2 = 13;
+		
+		Node t = td.lca(td.root, n1, n2);
+        System.out.println("LCA of " + n1 + " and " + n2 + " is " + t.iData);
 	}
 }
