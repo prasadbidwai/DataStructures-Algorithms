@@ -1,4 +1,23 @@
-public abstract class Beverage
+
+class DecoratorSingleFile
+{
+	public static void main(String[] args) 
+	{
+		Beverage beverage = new HouseBlend();
+
+		System.out.println(beverage.getDescription()+ "$" +beverage.cost());
+		
+		Beverage beverage2 = new DarkRoast();
+		
+		beverage2 = new Mocha(beverage2);
+		beverage2 = new Mocha(beverage2);
+		beverage2 = new Whip(beverage2);
+		
+		System.out.println(beverage2.getDescription()+ "$" + beverage2.cost());
+	
+	}
+
+public static abstract class Beverage
 {
 	String description = "NO description available for";
 
@@ -11,12 +30,12 @@ public abstract class Beverage
 
 }
 
-public abstract class CondimentDecorator extends Beverage
+public static abstract class CondimentDecorator extends Beverage
 {
 	public abstract String getDescription();
 }
 
-public class HouseBlend extends Beverage
+public static class HouseBlend extends Beverage
 {
 	public HouseBlend()
 	{
@@ -30,11 +49,11 @@ public class HouseBlend extends Beverage
 
 }
 
-public class DarkRoast extends Beverage
+public static class DarkRoast extends Beverage
 {
 	public DarkRoast()
 	{
-		description = "DarkRoast"
+		description = "DarkRoast";
 	}
 
 	public int cost()
@@ -43,7 +62,7 @@ public class DarkRoast extends Beverage
 	}
 }
 
-public class Mocha extends CondimentDecorator
+public static class Mocha extends CondimentDecorator
 {
 	Beverage beverage;
 
@@ -63,7 +82,7 @@ public class Mocha extends CondimentDecorator
 	}
 }
 
-public class Whip extends CondimentDecorator
+public static class Whip extends CondimentDecorator
 {
 	Beverage beverage;
 
@@ -83,24 +102,5 @@ public class Whip extends CondimentDecorator
 	}
 }
 
-
-
-class DecoratorDemo
-{
-	public static void main(String[] args) 
-	{
-		Beverage beverage = new HouseBlend();
-
-		System.out.println(beverage.getDescription()+ "$" +beverage.cost());
-		
-		Beverage beverage2 = new DarkRoast();
-		
-		beverage2 = new Mocha(beverage2);
-		beverage2 = new Mocha(beverage2);
-		beverage2 = new Whip(beverage2);
-		
-		System.out.println(beverage2.getDescription()+ "$" + beverage2.cost());
-	
-	}
 }
 
