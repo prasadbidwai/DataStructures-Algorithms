@@ -4,13 +4,18 @@
     import java.util.*;
 
     class ArrayQuestion {
+
       public static void main(String[] args) 
       {
 
         String orig = "sracecars";
+        System.out.println("String "+ orig+" is a Palindrome: ");
+        
         System.out.println(isPalindrome(orig));
         
-        int[] arr =   {1, 4,3};
+        int[] arr =   {1, 4,3,6};
+        System.out.println("\nIncreasing number of SubArrays in array "+ Arrays.toString(arr)+ " is: " );
+        
         countIncreasingSubArr(arr);
         
         int[] arr2 = {3, 7, 90, 20, 10, 50, 40};
@@ -81,7 +86,7 @@
            li = (j-len+1);
          }
        }
-     System.out.println(" min average for subArray with subArrayLength:" + len + " is betwwen: "+ li + " " + (li+len-1));   
+     System.out.println("\nMin average for subArray with subArrayLength:" + len + " is betwwen: "+ li + " " + (li+len-1));   
      }
 
 // Given an array A[] and a number x, check for pair in A[] with sum as x
@@ -89,8 +94,8 @@
   {
     
     // Declares and initializes the whole array as false
-    boolean[] binmap = new boolean[MAX];
-   
+    boolean[] binmap = new boolean[2000];
+
     for (int i=0; i<arr.length; ++i)
     {
         int temp = sum-arr[i];
@@ -98,7 +103,7 @@
         // checking for condition
         if (temp>=0 && binmap[temp])
         {
-        System.out.println("Pair with given sum " +sum + " is (" + arr[i] +", "+temp+")");
+        System.out.println("\nPair with given sum " +sum + " is (" + arr[i] +", "+temp+")");
         }
               binmap[arr[i]] = true;
     }
