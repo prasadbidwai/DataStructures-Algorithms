@@ -7,31 +7,36 @@ import java.util.*;
 class HashProbs
 {
 
-public void getItinerary(Map<String, String> test)
+public void getItinerary(Map<String, String> ipMap)
 {
+  String start = null;
+  Map<String, String> rm = new HashMap<String, String>();
 
-    String start = null;
-    Map<String, String> rm = new HashMap<String, String>();
-    
-    for(Map.Entry<String, String> it: test.entrySet()){
-      rm.put(it.getValue(), it.getKey());
-    } 
-    
-    for(Map.Entry<String, String> itt: test.entrySet()){
-      if(!rm.containsKey(itt.getKey())){
-        start = itt.getKey();
-        break;
-      }
+  for(Map.Entry<String, String> it: ipMap.entrySet()){
+    rm.put(it.getValue(), it.getKey());
+  }
+
+  for(Map.Entry<String, String> it: ipMap.entrySet())
+  { 
+    String current = it.getKey();
+    if(!rm.containsKey(current))
+    {
+      start = current;
+      break;
     }
-    
-    String to = test.get(start);
-    
-    while(to!= null){
-      System.out.println(start + " --> " + to);
-      start = to; 
-      to = test.get(start);
-    }
+  }
+
+  String to = ipMap.get(start);
+
+  while(to != null)
+  {
+    System.out.println(start +" to --> "+ to);
+    start = to;
+    to = ipMap.get(start);
+  }
+
 }
+
 
 
   public static void findSymmtricPairs(int[][] test)
@@ -61,7 +66,7 @@ public void getItinerary(Map<String, String> test)
 
   }
 
-public static int largestZeroSumSubArray(int[] array)
+public static int largestZeroSumSubArray(int[] arr)
 {
   // Creates an empty hashMap hM
   HashMap<Integer, Integer> hM = new HashMap<Integer, Integer>();
@@ -186,18 +191,24 @@ class HashMapOps{
         dataSet.put("Goa", "Chennai");
         dataSet.put("Delhi", "Goa");
     
-    HashProbs hp = new HashProbs();   // class instanciation for calling its funcions from the main method. 
+    System.out.println("\nthe travel itinerary problem answer:: ");
+    
+    HashProbs hp = new HashProbs();   // class instanciation for calling its funcions from the main method.
 
+    hp.getItinerary(dataSet);
+     
+    System.out.println("\nthe solution to finding pairs with the same sum :: ");
     int[] pariArray = {3, 4, 7, 1, 12, 9};
     
     hp.findPairs(pariArray);
-    hp.getItinerary(dataSet);
-
+    
+    System.out.println("\nthe solution to finding symmetric pairs :: ");  
     int arr[][]= {{11, 20}, {30, 40}, {5, 10}, {40, 30}, {10, 5}};
     hp.findSymmtricPairs(arr);
 
+    System.out.println("\nthe solution to the largest sub array with zero sum ::");  
     int arr1[] = {15, -2, 2, -8, 1, 7, 10, -12, 2, 23};
-    System.out.println("the length of the largest sub array with zero sum is: " + hp.largestZeroSumArray(arr1));    
+    System.out.println("the length of the largest sub array with zero sum is: " + hp.largestZeroSumSubArray(arr1));    
 
   }
 } 
