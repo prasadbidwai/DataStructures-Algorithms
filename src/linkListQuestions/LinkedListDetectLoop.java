@@ -80,7 +80,9 @@ class LinkedListDetectLoop {
  
     // Driver program to test above functions
     public static void main(String[] args) {
-        LinkedList list = new LinkedList();
+        
+        LinkedListDetectLoop list = new LinkedListDetectLoop();
+
         list.head = new Node(50);
         list.head.next = new Node(20);
         list.head.next.next = new Node(15);
