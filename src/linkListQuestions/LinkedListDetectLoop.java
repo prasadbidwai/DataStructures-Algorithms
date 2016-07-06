@@ -1,5 +1,4 @@
 // Java program to detect and remove loop in linked list
-import java.util.LinkedList;
  
 class LinkedListDetectLoop {
  
