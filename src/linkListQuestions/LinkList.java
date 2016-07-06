@@ -1,4 +1,4 @@
-package linkListQuestions;
+//package linkListQuestions;
 
 import java.util.HashSet;
 
@@ -11,7 +11,7 @@ public class LinkList {
 	
 	public void addfirst(int da){
 		Link newLink = new Link(da);
-		newLink.next = null;
+		newLink.next = first;
 		first = newLink;
 	}
 	
@@ -22,10 +22,8 @@ public class LinkList {
 	}
 	
 	public boolean isEmpty() {
-		if (first == null){
-			return true;	
-		}
-		return false;
+	
+		return(first == null);
 	}
 	
 	public void displayList() {
@@ -34,7 +32,7 @@ public class LinkList {
 			current.displayLink();
 			current = current.next;
 		}
-		System.out.println(" ");
+		System.out.print(" ");
 	}
 	
 	public void deleteDups(Link l1){

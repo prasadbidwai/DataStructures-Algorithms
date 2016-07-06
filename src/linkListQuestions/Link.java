@@ -1,6 +1,6 @@
-package linkListQuestions;
+//package linkListQuestions;
 
-import java.util.LinkedList;
+//import java.util.LinkedList;
 
 public class Link {
 	
@@ -12,7 +12,7 @@ public class Link {
 	}
 	
 	public void displayLink(){
-		System.out.println("Data: "+ data);
+		System.out.print(data+" ");
 	}
 	
 }
