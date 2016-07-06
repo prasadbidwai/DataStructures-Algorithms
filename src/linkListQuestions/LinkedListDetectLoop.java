@@ -1,4 +1,5 @@
 // Java program to detect and remove loop in linked list
+import java.util.LinkedList;
  
 class LinkedListDetectLoop {
  
@@ -16,15 +17,15 @@ class LinkedListDetectLoop {
     }
  
     // Function that detects loop in the list
-    int detectAndRemoveLoop(Node node) {
-        Node slow = node, fast = node;
+    int detectAndRemoveLoop() {
+        Node slow = head, fast = head;
         while (slow != null && fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
  
             // If slow and fast meet at same point then loop is present
             if (slow == fast) {
-                removeLoop(slow, node);
+                removeLoop(slow);
                 return 1;
             }
         }
@@ -32,7 +33,7 @@ class LinkedListDetectLoop {
     }
  
     // Function to remove loop
-    void removeLoop(Node loop, Node head) {
+    void removeLoop(Node loop) {
         Node ptr1 = loop;
         Node ptr2 = loop;
  
@@ -82,7 +83,6 @@ class LinkedListDetectLoop {
     public static void main(String[] args) {
         
         LinkedListDetectLoop list = new LinkedListDetectLoop();
-
         list.head = new Node(50);
         list.head.next = new Node(20);
         list.head.next.next = new Node(15);
@@ -91,7 +91,7 @@ class LinkedListDetectLoop {
  
         // Creating a loop for testing 
         head.next.next.next.next.next = head.next.next;
-        list.detectAndRemoveLoop(head);
+        list.detectAndRemoveLoop();
         System.out.println("Linked List after removing loop : ");
         list.printList(head);
     }
