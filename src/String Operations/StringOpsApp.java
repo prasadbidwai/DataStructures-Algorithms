@@ -11,7 +11,7 @@ String operations:
 import java.io.*;
 import java.util.*;
 
-class Solution {
+class StringOpsApp {
   
   public static void main(String[] args) {
   String test = "aabbbbcddddaaaaa";     
@@ -20,7 +20,7 @@ class Solution {
   String string1 = "waterbottle";
   String string2 = "erbottlewat";
     
-  System.out.println("erbottlewate is rotation of word waterbottle: "+ 
+  System.out.println("\nerbottlewate is rotation of word waterbottle: "+ 
                     checkIfRotation(string2, string1));
     
   assert((checkIfRotation(string2, string1))) == true;
@@ -28,13 +28,18 @@ class Solution {
   String chck = "parallel";
   String chck2 = "uniqe";
 
+  System.out.println("\nString parallel has all unique Characters:: ");  
   System.out.println(chckUnique(chck));
+
+  System.out.println("\nString uniqe has all unique Characters:: ");  
   System.out.println(chckUnique(chck2)); 
 
+  System.out.println("\nchecking if String sracecars is palindrome:: ");
   String orig = "sracecars";
   System.out.println(isPalindrome(orig));
 
   // call to function to find the longest palindromic substring 
+  System.out.println("\nLongest palindromic Sub Strings:: ");
   System.out.println(longestPalindromeString("1234"));
   System.out.println(longestPalindromeString("12321"));
   System.out.println(longestPalindromeString("9912321456"));
@@ -127,8 +132,8 @@ public static boolean chckUnique(String uniqueStr)  {
     
     for (int i = 0 ; i < uniqueStr.length() ; i++){
     
-      int val = uniqueStr.charAt(i);
-      System.out.println(val);
+      int val = uniqueStr.charAt(i);  //get the ascii value of the characters
+      //System.out.println(val);
       if(chckBoolean[val]){
         return false;
       }
