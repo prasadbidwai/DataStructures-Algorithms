@@ -1,9 +1,19 @@
+/* 
+program to demostrate use of Synchronized Keyword for:
+1. Defining synchronized method  
+2. Protect race condition by guarding call to unsynchronized method by enclosing call in synchronized block
+and demostrate race condition in absence of synchronized block
+*/
+
+
 class SynchronisationOneFile
 {
 	public static void main(String[] args) {
 		Callme target =  new Callme();
 
-		Caller ob1 = new Caller(target, "Hello");
+		/*observe the constuctor call:  Thread(Runnable threadOb, String threadName) 
+		(first parameter is instance of the class implementing Runnable & Second is the Name )*/
+		Caller ob1 = new Caller(target, "Hello"); 
 		Caller ob2 = new Caller(target, "Synchronised");
 		Caller ob3 = new Caller(target, "World !!");
 
@@ -15,8 +25,9 @@ class SynchronisationOneFile
 			System.out.println("Interrupted "+ e);
 		}
 	}
+}
 
-static class Caller implements Runnable
+class Caller implements Runnable
 {
 	Thread t;
 	String msg;
@@ -33,6 +44,8 @@ static class Caller implements Runnable
 	public void run() 			
 	{
 		
+	//3 differnt ways to call the method in callMe: (unsynchornized, call to synchronized method, & call from within synchronized block)
+
 	//	target.call(msg);	//call to method w/o synchronized keyword.
 
 	//	target.synchronizedCall(msg);	//call to method with synchronized keyword.
@@ -45,7 +58,7 @@ static class Caller implements Runnable
 	}
 }	
 	
-static class Callme{
+class Callme{
 	//Method w/o synchronized keyword.
 	void call(String msg) 	
 	{
@@ -72,8 +85,6 @@ static class Callme{
 		}
 		System.out.println("]");
 	}
-}
-
 }
 
 /*

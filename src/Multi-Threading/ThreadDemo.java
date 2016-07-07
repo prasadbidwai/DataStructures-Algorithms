@@ -1,13 +1,12 @@
 //code to demnostrate the new thread creation using the runnable Interface method
-// other file associated with this: NewThread.java
 
 class ThreadDemo 
 {
 	public static void main(String args[]) 
 	{
 		new NewThread(); // create a new thread
-	try {
 	
+	try {
 		for(int i = 5; i > 0; i--) 
 		{
 			System.out.println("Main Thread: " + i);
@@ -51,3 +50,46 @@ static class NewThread implements Runnable
 }
  
 }
+
+// class ThreadDemo
+// {
+// 	public static void main(String[] args) {
+// 		new NewThread("MyChildthread");
+
+// 		try{
+// 			for(int i = 5 ; i > 0; i--)
+// 			{	
+// 				System.out.println("main thread:: "+i+ " ");
+// 				Thread.sleep(1000);
+// 			}
+// 		}catch(Exception e){
+// 			System.out.println("the exception thrown is::" + e);
+// 		}
+		
+// 	}
+// }
+
+// class NewThread implements Runnable
+// {
+// 	Thread t;
+// 	public NewThread(String name)
+// 	{
+// 		t = new Thread(this, name);
+// 		System.out.println("Child thread being started:: "+ t);
+// 		t.start();
+// 	}
+
+// public void run()
+// {
+// 	try{
+// 		for(int i = 5 ; i > 0; i--)
+// 		{
+// 			System.out.println(t+": "+i+" ");
+// 			Thread.sleep(500);	
+// 		}
+// 	}catch(Exception e){
+// 		System.out.println("the exception thrown::"+ e);
+// 	}
+// }
+	
+// }
