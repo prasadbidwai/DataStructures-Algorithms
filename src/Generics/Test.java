@@ -1,7 +1,6 @@
 // A Simple Java program to show working of user defined Generic classes
 
 // Example to show user defined generics function: 
-
 public class Test
 {
    // generic method printArray                         
@@ -31,7 +30,8 @@ public class Test
         printArray( charArray ); // pass a Character array
     } 
 }
-  
+
+// Example to show user defined Generics class
 // We use < > to specify Parameter type
 class Test<T>
 {
