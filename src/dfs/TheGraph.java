@@ -1,18 +1,22 @@
+import java.util.*;
+
 class TheGraph{
 
 	private int MaxVerts = 20;
 	int[][] adjMatrix;
 	private Vertex[] vertexList;
-	private TheStack thestack; 
+	//private TheStack thestack; 
+	Stack<Integer> thestack; 
 	private int nVerts;
-	private TheQueue theQ;
+//	private TheQueue theQ;
+	Queue<Integer> theQ;
 
 	public TheGraph(){
 
 		vertexList = new Vertex[MaxVerts];
 		adjMatrix = new int[MaxVerts][MaxVerts];
-		thestack = new TheStack();
-		theQ = new TheQueue();
+		thestack = new Stack<Integer>();
+		theQ = new LinkedList<Integer>();
 
 		nVerts = 0;
 		
@@ -32,13 +36,13 @@ class TheGraph{
 	}
 
 	public void displayVertex(int k){
-		System.out.println(vertexList[k].label);
+		System.out.print(vertexList[k].label+" ");
 	}
 
 	public void printGraph(){
 		for(int m = 0 ; m < nVerts ; m++){
 			for(int n = 0 ; n < nVerts ; n++){
-				System.out.println(adjMatrix[m][n]);
+				System.out.print(adjMatrix[m][n]+" ");
 			}
 			System.out.println("\n ");
 		}
@@ -46,7 +50,7 @@ class TheGraph{
 
 	public void displayVertices(){
 		for (int p = 0 ; p < nVerts ; p++){
-			System.out.println(vertexList[p].label);
+			System.out.print(vertexList[p].label+" ");
 		}
 	}
 
@@ -78,7 +82,7 @@ class TheGraph{
 	{
 		vertexList[0].isVisited = true;
 		displayVertex(0);
-		theQ.insert(0);
+		theQ.add(0);
 		int v2;
 
 		while(!theQ.isEmpty()){
@@ -89,7 +93,7 @@ class TheGraph{
 
 				vertexList[v2].isVisited = true;
 				displayVertex(v2);
-				theQ.insert(v2);
+				theQ.add(v2);
 			}
 		}
 		

@@ -19,7 +19,10 @@ class DFSApp{
 //		tg.printGraph();
 //		tg.displayVertices();
 
+		System.out.println("Calling the DFS:: ");
 		tg.dfs(); // depth-first search
+		
+		System.out.println("\nCalling the BFS Now :: ");
 		tg.bfs();
 
 		System.out.println();
