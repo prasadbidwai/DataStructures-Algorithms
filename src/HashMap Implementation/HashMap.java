@@ -20,7 +20,7 @@ class HashMap
 		{
 			hashVal = (hashVal+1)%maxsize;
 		}
-	
+	return hashVal;
 	}
 
 	public void put(int key, int value)
