@@ -65,6 +65,14 @@ Department Table:
 | 2  | Sales    |
 +----+----------+
 
+Expected Output:
++------------+----------+--------+
+| Department | Employee | Salary |
++------------+----------+--------+
+| IT         | Max      | 90000  |
+| Sales      | Henry    | 80000  |
++------------+----------+--------+
+
 */
 select distinct(d.Name) as Department, f.name as Employee, r.maxsalary as Salary 
 from
