@@ -19,7 +19,7 @@ class Q
     synchronized void put(int key){
         while(flag)
             try {
-                wait(10000, 10000);
+                wait(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -33,7 +33,7 @@ class Q
     synchronized int get() {
         while(!flag)
             try {
-                wait(10000, 10000);
+                wait(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
