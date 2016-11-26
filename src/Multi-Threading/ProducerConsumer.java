@@ -4,12 +4,10 @@ This is a program to demonstrate thread synchronisation using wait & notify meth
 */
 
 public class PCDemo {
-
     public static void main(String[] args){
         Q q = new Q();
         Producer p = new Producer(q);
         Consumer c = new Consumer(q);
-
     }
 }
 
