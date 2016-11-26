@@ -3,94 +3,89 @@ This is a program to demonstrate thread synchronisation using wait & notify meth
 
 */
 
-class ProducerConsumer
-{
+public class PCDemo {
 
-	public static void main(String[] args) {
-		
-		Q q = new Q();
-		new Producer(q);
-		new Consumer(q);
-	}
+    public static void main(String[] args){
+        Q q = new Q();
+        Producer p = new Producer(q);
+        Consumer c = new Consumer(q);
 
-	static class Q
-	{
-		int n;
-		boolean flag = true;
-
-		synchronized void put(int n)
-		{	while(flag)
-				try{
-					wait();
-				}catch(InterruptedException e) {
-					System.out.println("Interrupted execution: "+ e);
-				}
-			
-			this.n = n;
-			flag = true;
-			System.out.println("put : "+ n);
-			notify();
-		}
-
-		synchronized int get()
-		{	
-			while(!flag)
-				try{
-						wait();
-				}catch(InterruptedException e)
-					{
-						System.out.println("Interrupted "+ e);
-					}
-
-			System.out.println("the value(n) being returned: " + n);
-			flag = false;
-			notify();
-			return n;
-		}
-	} 
-
-	static class Producer implements Runnable
-	{
-		Q q;
-		Thread t;
-
-		Producer(Q q)
-		{
-			this.q = q;
-			t = new Thread(this, "Producer Thread");
-			t.start();
-		}
-		
-		public void run()
-		{
-			int i = 0;
-
-			while(true){
-				q.put(i++);
-			}
-			
-		}
-	}
-
-	static class Consumer implements Runnable
-	{
-		Q q;
-		Thread t;
-
-		public Consumer(Q q)
-		{
-			this.q = q;
-			t = new Thread(this, "Cosumer");
-			t.start();
-		}
-		
-		public void run()
-		{
-			while(true) {
-				q.get();	
-			}
-		}
-
-	}
-
+    }
 }
+
+class Q
+{
+    int n;
+    boolean flag =true;
+
+    synchronized void put(int key){
+        while(flag)
+            try {
+                wait(10000, 10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        n = key;
+        System.out.println("Value put is:"+key);
+        flag = true;
+        notify();
+    }
+
+    synchronized int get() {
+        while(!flag)
+            try {
+                wait(10000, 10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        flag = false;
+        notify();
+        return n;
+    }
+}
+
+class Producer implements Runnable
+{
+    Q q;
+    Thread t;
+    int i = 0;
+
+    public Producer(Q q)
+    {
+        this.q = q;
+        t = new Thread(this, "Consumer Thread");
+        t.start();
+    }
+    @Override
+    public void run()
+    {
+        while(true){
+            q.put(i++);
+        }
+    }
+}
+
+class Consumer implements Runnable
+{
+    Q q;
+    Thread t;
+
+    public Consumer(Q q){
+        this.q = q;
+        t = new Thread(this, "Consumer Thread");
+        t.start();
+    }
+
+    @Override
+    public void run() {
+        while (true){
+            int value = q.get();
+            System.out.println("the value consumer consumed is:: "+value);
+        }
+    }
+}
+
+
+
+
