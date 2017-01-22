@@ -62,7 +62,6 @@ class WeatherStation implements Subject
 			Observer theob = (Observer)observers.get(i);
 			theob.update(temprature, humidity, pressure);
 		}
-	
 	}	
 
 	public void measurementsChanged()
@@ -104,7 +103,6 @@ class HandHeldDevice implements Observer, display
 		this.pressure = press;
 		displayContent();
 	}
-
 }
 
 
