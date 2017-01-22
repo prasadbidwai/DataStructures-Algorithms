@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 
-class ObserverPatrn
+class ObserverPatrnSingleFile
 {
 	public static void main(String[] args) 
 	{
@@ -13,19 +13,19 @@ class ObserverPatrn
 	}	
 }
 
-public interface Observer
+interface Observer
 {
 	public void update(int temp, int hum, int pressure);
 }
 
-public interface Subject
+interface Subject
 {
 	public void registerObserver(Observer ob);
 	public void removeObserver(Observer ob);
 	public void notifyObservers();
 }
 
-public interface display
+interface display
 {
 	public void displayContent();
 }
@@ -80,7 +80,7 @@ class WeatherStation implements Subject
 
 }
 
-public class HandHeldDevice implements Observer, display
+class HandHeldDevice implements Observer, display
 {
 	
 	private int temprature, humidity, pressure;
@@ -94,7 +94,7 @@ public class HandHeldDevice implements Observer, display
 
 	public void displayContent()
 	{
-		System.out.println("temprature, humidity, pressure : " + temprature + humidity + pressure);
+		System.out.println("temprature, humidity, pressure : " + temprature +" "+ humidity +" "+ pressure);
 	}
 
 	public void update(int temp, int hum, int press)
@@ -107,16 +107,4 @@ public class HandHeldDevice implements Observer, display
 
 }
 
-
-class ObserverPatrn
-{
-	public static void main(String[] args) 
-	{
-		WeatherStation theweathrstn = new WeatherStation();
-
-		HandHeldDevice hd = new HandHeldDevice(theweathrstn);
-		
-		theweathrstn.setMeasurements(10, 20, 30);			 
-	}	
-}
 
