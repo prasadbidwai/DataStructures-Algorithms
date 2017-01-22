@@ -14,10 +14,13 @@ class DecoratorSingleFile
 		beverage2 = new Whip(beverage2);
 		
 		System.out.println(beverage2.getDescription()+ "$" + beverage2.cost());
-	
-	}
 
-public static abstract class Beverage
+		Beverage beverage3 = new Whip(new Mocha(new HouseBlend()));
+		System.out.println(beverage3.getDescription()+ "$" + beverage3.cost());	
+	}
+}
+
+abstract class Beverage
 {
 	String description = "NO description available for";
 
@@ -30,12 +33,12 @@ public static abstract class Beverage
 
 }
 
-public static abstract class CondimentDecorator extends Beverage
+abstract class CondimentDecorator extends Beverage
 {
 	public abstract String getDescription();
 }
 
-public static class HouseBlend extends Beverage
+class HouseBlend extends Beverage
 {
 	public HouseBlend()
 	{
@@ -44,12 +47,12 @@ public static class HouseBlend extends Beverage
 
 	public int cost()
 	{
-		return 2;
+		return 3;
 	}
 
 }
 
-public static class DarkRoast extends Beverage
+class DarkRoast extends Beverage
 {
 	public DarkRoast()
 	{
@@ -62,7 +65,7 @@ public static class DarkRoast extends Beverage
 	}
 }
 
-public static class Mocha extends CondimentDecorator
+class Mocha extends CondimentDecorator
 {
 	Beverage beverage;
 
@@ -82,13 +85,13 @@ public static class Mocha extends CondimentDecorator
 	}
 }
 
-public static class Whip extends CondimentDecorator
+class Whip extends CondimentDecorator
 {
 	Beverage beverage;
 
 	public Whip(Beverage be)
 	{
-		this.beverage = be;
+		beverage = be;
 	}
 
 	public String getDescription()
@@ -102,5 +105,4 @@ public static class Whip extends CondimentDecorator
 	}
 }
 
-}
 
