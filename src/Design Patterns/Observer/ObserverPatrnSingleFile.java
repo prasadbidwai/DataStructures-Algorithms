@@ -87,7 +87,7 @@ class HandHeldDevice implements Observer, display
 
 	public HandHeldDevice(WeatherStation ws)
 	{
-		this.weastn = ws;
+		weastn = ws;
 		weastn.registerObserver(this);
 	}
 
