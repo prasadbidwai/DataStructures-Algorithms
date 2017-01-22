@@ -42,9 +42,8 @@ class SingletonThreadSafe
 class SingletonDoubleCheck
 {
 	private volatile static SingletonDoubleCheck uniqueInstance; 
-	/* Volatile keyword ensures the variable uniqueInstance is handled correctly 
-	by multiple threads when is being initialized to Singleton instance */
-
+	///Volatile keyword ensures visibility of any changes to the variable uniqueInstance across threads
+	
 	private SingletonDoubleCheck(){}
 
 	public static SingletonDoubleCheck getInstance()
