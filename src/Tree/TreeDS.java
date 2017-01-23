@@ -145,9 +145,8 @@ class TreeDS{
  
         return node;
     }
-
-
-		// public boolean deleteElement(int key)
+		
+	// public boolean deleteElement(int key)
 		// {
 		// 	Node current = root;
 		// 	Node parent = root;
@@ -241,25 +240,23 @@ class TreeDS{
 		// return true;	
 		// }
 
-// private Node getSuccessor(Node delNode)
-// {
-// 	Node successorParent = successor;
-// 	Node successor = delNode;
-// 	Node current = delNode.rightChild;
-
-// 	while(current != null)
-// 	{
-// 		successorParent = successor;
-// 		successor = current;
-// 		current = current.leftChild;
-// 	}
-
-// 	if(successor != delNode.rightChild)
-// 	{
-// 		successorParent.leftChild = successor.rightChild;
-// 		successor.rightChild = delNode.rightChild; 
-// 	}
-// }
+private Node getSuccessor(Node delNode)
+{
+	Node successorParent = delNode; 
+	Node successor = delNode;
+	Node current = delNode.rightChild; 
+	while(current != null)
+	{
+		successorParent = successor; 
+		successor = current;
+		current = current.leftChild;
+	}
+	if(successor != delNode.rightChild) 
+	{
+		successorParent.leftChild = successor.rightChild; successor.rightChild = delNode.rightChild;
+	}
+return successor;
+}
 
 
 
