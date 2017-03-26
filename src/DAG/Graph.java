@@ -62,7 +62,7 @@ class Graph
                 topologicalSortUtil(i, visited, stack);
  
         // Print contents of stack
-        while (stack.empty()==false)
+        while (!stack.empty())
             System.out.print(stack.pop() + " ");
     }
  
