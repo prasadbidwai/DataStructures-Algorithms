@@ -23,9 +23,11 @@ class SingletonThreadSafe
 {
 	private static SingletonThreadSafe uniqueInstance;
 
-	private SingletonThreadSafe(){}
+	private SingletonThreadSafe(){
+		
+	}
 
-	public static Synchronized SingletonThreadSafe getInstance()
+	public static synchronized SingletonThreadSafe getInstance()
 	{
 		if(uniqueInstance == null){
 			uniqueInstance = new SingletonThreadSafe();
@@ -41,8 +43,9 @@ class SingletonThreadSafe
 
 class SingletonDoubleCheck
 {
-	private volatile static SingletonDoubleCheck uniqueInstance; 
 	///Volatile keyword ensures visibility of any changes to the variable uniqueInstance across threads
+	private volatile static SingletonDoubleCheck uniqueInstance; 
+
 	
 	private SingletonDoubleCheck(){}
 
@@ -50,7 +53,7 @@ class SingletonDoubleCheck
 	{
 		if(uniqueInstance == null)
 		{
-			Synchronized(SingletonDoubleCheck.class)
+			synchronized(SingletonDoubleCheck.class)
 			{
 				if (uniqueInstance == null) {
 					uniqueInstance = new SingletonDoubleCheck();

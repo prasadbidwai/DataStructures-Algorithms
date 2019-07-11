@@ -6,7 +6,7 @@ class TheGraph{
 	int[][] adjMatrix;
 	private Vertex[] vertexList;
 	//private TheStack thestack; 
-	Stack<Integer> thestack; 
+	Stack<Integer> thestack;
 	private int nVerts;
 //	private TheQueue theQ;
 	Queue<Integer> theQ;

@@ -2,8 +2,6 @@ package com.LinkList.operations;
 
 import java.util.HashSet;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class LinkList {
 	public Link first; 
 	
@@ -24,10 +22,7 @@ public class LinkList {
 	}
 	
 	public boolean isEmpty() {
-		if (first == null){
-			return true;	
-		}
-		return false;
+		return first == null;
 	}
 	
 	public void displayList() {
@@ -44,16 +39,16 @@ public class LinkList {
 		HashSet<Integer> set1 = new HashSet<Integer>();
 
 		Link previous = null;
-		Link n = first;
-		while(n != null){
-			if(set1.contains(n.data)){
-				previous.next = n.next;
+		Link current = first;
+		while(current != null){
+			if(set1.contains(current.data)){
+				previous.next = current.next;
 			}
 			else{
-				set1.add(n.data);
-				previous = n;
+				set1.add(current.data);
+				previous = current;
 				}
-			n = n.next;
+			current = current.next;
 		} 
 	}
 	

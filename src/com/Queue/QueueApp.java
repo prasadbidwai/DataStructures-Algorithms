@@ -11,6 +11,9 @@ public class QueueApp {
 		q.insert(66);
 		q.insert(22);
 		q.insert(10);
+
+		
+		System.out.println(q.isFull());
 		
 		while(!q.isEmpty()){
 			System.out.println(" " + q.remove());

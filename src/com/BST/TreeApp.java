@@ -18,13 +18,20 @@ public class TreeApp {
 		bst.insert(93);
 		bst.insert(97);
 		
+//		System.out.println("root:: "+bst.root.data);
+		
+		System.out.println(bst.depth());
+		System.out.println("\nPriniting In-Order:: ");
 		bst.inorder(bst.root);
 		
 		Node min = bst.getmin();
-		System.out.println("Smallest Element: "+min.data);
+		System.out.println("\n\nSmallest Element: "+min.data);
 		
 		Node max = bst.getMax();
 		System.out.println("Largest Element: "+max.data);
+		
+		System.out.println("\nPriniting level-wise:: ");
+		bst.printlevelwise(bst.root);
 		
 		
 	}

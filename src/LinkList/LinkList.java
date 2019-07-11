@@ -1,5 +1,5 @@
 class LinkList{
-	
+
 	Link first;
 
 	public LinkList(){
@@ -42,7 +42,7 @@ class LinkList{
 			if(current.next == null)
 				return null;
 
-			else 
+			else
 				current = current.next;
 		}
 		return current;
@@ -52,9 +52,9 @@ class LinkList{
 
 		Link current = first;
 		Link previous = first;
-		
+
 		while(current.idata != key){
-			
+
 			if (current.next == null)
 			return null;
 
@@ -66,9 +66,9 @@ class LinkList{
 		}
 		if(current == first)
 			first = first.next;
-		else	
+		else
 			previous.next = current.next;
 		return current;
-	}	
+	}
 
 }

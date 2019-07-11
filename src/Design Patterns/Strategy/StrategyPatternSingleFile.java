@@ -18,9 +18,9 @@ class StrategyPatternSingleFile
 		wd.setFlyBehavior(new FlyWRocket());
 		wd.performFly();		
 	}
-}
 
-abstract class Duck
+
+public static class Duck
 {
 	FlyBehavior fb;
 	QuackBehavior qb;
@@ -56,7 +56,7 @@ interface QuackBehavior
 	public void quack();
 }
 
-class MallardDuck extends Duck
+static class MallardDuck extends Duck
 {
 	public MallardDuck()
 	{
@@ -66,7 +66,7 @@ class MallardDuck extends Duck
 
 }
 
-class FlyWithWings implements FlyBehavior
+static class FlyWithWings implements FlyBehavior
 {
 	public void fly()
 	{
@@ -74,7 +74,7 @@ class FlyWithWings implements FlyBehavior
 	}
 }
 
-class FlyWRocket implements FlyBehavior
+static class FlyWRocket implements FlyBehavior
 {
 	public void fly()
 	{
@@ -82,7 +82,7 @@ class FlyWRocket implements FlyBehavior
 	}
 }
 
-class NoFly implements FlyBehavior
+static class NoFly implements FlyBehavior
 {
 	public void fly()
 	{
@@ -90,7 +90,7 @@ class NoFly implements FlyBehavior
 	}
 }
 
-class Quack implements QuackBehavior
+static class Quack implements QuackBehavior
 {
 	public void quack()
 	{
@@ -98,7 +98,7 @@ class Quack implements QuackBehavior
 	}
 }
 
-class NoQuack implements QuackBehavior
+static class NoQuack implements QuackBehavior
 {
 	public void quack()
 	{
@@ -106,7 +106,7 @@ class NoQuack implements QuackBehavior
 	}
 }
 
-class WoodenDuck extends Duck
+static class WoodenDuck extends Duck
 {
 	public WoodenDuck()
 	{
@@ -115,3 +115,4 @@ class WoodenDuck extends Duck
 	}
 }
 
+}

@@ -24,10 +24,10 @@ class DFSApp{
 //		tg.displayVertices();
 
 		System.out.println("Calling the DFS:: ");
-		tg.dfs1(); // depth-first search
+		tg.dfs(); // depth-first search
 		
 		System.out.println("\nCalling the BFS Now :: ");
-		tg.bfs1();
+		tg.bfs();
 
 		System.out.println();
 	}
@@ -36,7 +36,7 @@ class DFSApp{
 
 //	The Tree:
 //			      A
-//			   /    \
-//			  B      D	
+//			   /     \
+//			  B       D	
 //			 / \     / \
 //			C   G   E   F

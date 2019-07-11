@@ -66,7 +66,6 @@ public class EStack {
 
 	public char popChar(){
 		return charray[top--];
-
 	}
 
 	public int pop(){
@@ -74,12 +73,7 @@ public class EStack {
 	}
 
 	public boolean isEmpty(){
-		if(top == -1)
-		{
-			return true;
-		}
-
-		return false;
+		return (top ==-1);
 	}
 
 

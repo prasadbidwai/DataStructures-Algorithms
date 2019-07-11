@@ -14,37 +14,41 @@ import java.util.*;
 class StringOpsApp {
   
   public static void main(String[] args) {
-  String test = "aabbbbcddddaaaaa";     
+      int[] num = {1,2,4,5};
+    
+  System.out.println(sayInt(30));
+  System.out.println("Calling search insert :: "+searchInsert(num,3));
+      
+  String test = "aabbbbcddddaaaaa";
   stringCompres(test);
-  
+//
   String string1 = "waterbottle";
   String string2 = "erbottlewat";
-    
-  System.out.println("\nerbottlewate is rotation of word waterbottle: "+ 
-                    checkIfRotation(string2, string1));
-    
-  assert((checkIfRotation(string2, string1))) == true;
 
+  System.out.println(string1+" is rotation of word "+string2+":: "+ checkIfRotation(string2, string1));
+//
+//  assert((checkIfRotation(string2, string1))) == true;
+//
   String chck = "parallel";
-  String chck2 = "uniqe";
-
-  System.out.println("\nString parallel has all unique Characters:: ");  
+//  String chck2 = "uniqe";
+//
+//  System.out.println("\nString parallel has all unique Characters:: ");
   System.out.println(chckUnique(chck));
-
-  System.out.println("\nString uniqe has all unique Characters:: ");  
-  System.out.println(chckUnique(chck2)); 
-
-  System.out.println("\nchecking if String sracecars is palindrome:: ");
-  String orig = "sracecars";
-  System.out.println(isPalindrome(orig));
-
-  // call to function to find the longest palindromic substring 
-  System.out.println("\nLongest palindromic Sub Strings:: ");
+//
+//  System.out.println("\nString uniqe has all unique Characters:: ");
+//  System.out.println(chckUnique(chck2));
+//
+//  System.out.println("\nchecking if String sracecars is palindrome:: ");
+//  String orig = "sracecars";
+//  System.out.println(isPalindrome(orig));
+//
+//  // call to function to find the longest palindromic substring
+//  System.out.println("\nLongest palindromic Sub Strings:: ");
   System.out.println(longestPalindromeString("1234"));
-  System.out.println(longestPalindromeString("12321"));
-  System.out.println(longestPalindromeString("9912321456"));
-  System.out.println(longestPalindromeString("9912333321456"));
-  System.out.println(longestPalindromeString("12145445499"));
+//  System.out.println(longestPalindromeString("12321"));
+//  System.out.println(longestPalindromeString("9912321456"));
+//  System.out.println(longestPalindromeString("9912333321456"));
+//  System.out.println(longestPalindromeString("12145445499"));
   // end of call to function to find the longest palindromic substring
 
   }
@@ -133,7 +137,7 @@ public static boolean chckUnique(String uniqueStr)  {
     for (int i = 0 ; i < uniqueStr.length() ; i++){
     
       int val = uniqueStr.charAt(i);  //get the ascii value of the characters
-      //System.out.println(val);
+//      System.out.println(val);
       if(chckBoolean[val]){
         return false;
       }
@@ -141,5 +145,41 @@ public static boolean chckUnique(String uniqueStr)  {
     }
     return true;
     }
-  
+
+public static String sayInt(int n){
+    StringBuffer sBuffer = new StringBuffer();
+    while(n%10 != 0){
+        System.out.println(n);
+        sBuffer.append(1);
+        sBuffer.append(n);
+        n = n/10;
+    }
+    return sBuffer.toString();
 }
+
+    public static int searchInsert(int[] nums, int target) {
+        int i = 0;
+        int corret = 99999;
+
+        while (i< nums.length){
+ 
+            if (target == nums[i])
+            {
+                corret = i;
+                break;
+            }
+            else if(nums[i] < target){
+                i++;
+            }
+            else if (nums[i]>target){
+                corret = i;
+                break;
+            }
+        }
+      return corret;
+
+    }
+
+}
+  
+

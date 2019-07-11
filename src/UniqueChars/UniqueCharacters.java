@@ -24,16 +24,8 @@ public class UniqueCharacters {
 		UniqueCharacters unc = new UniqueCharacters(); 
 		String flag;
 		String input = "abcdef"; 
-		
-		boolean ans = unc.isUniqueChar(input);
-		
-		if (ans == true){
-			flag="Have Unique";
-		}
-		else {
-		flag = "Does Not have Unique";	
-			
-		}
+				
+		flag = unc.isUniqueChar(input) ? " Have Unique":"Does Not have Unique";		
 		
 		System.out.println("The given string "+ "( " + input + " )"+flag +" characters");
 				

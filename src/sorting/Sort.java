@@ -48,12 +48,9 @@ public class Sort {
 
 	public void display() {
 		for(int i=0;i<len;i++)
-		{
-			
-			System.out.println(" "+a[i]);
-			
+		{			
+			System.out.println(" "+a[i]);			
 		}
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -1,8 +1,8 @@
-//package linkListQuestions;
+package LinkListQuestions;
 
 //import java.util.LinkedList;
 
-public class Link {
+class Link {
 	
 	public int data;
 	public Link next;

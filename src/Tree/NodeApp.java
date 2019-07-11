@@ -37,8 +37,8 @@ class NodeApp{
 
 		td.PostOrder(td.root);
 
-		int n1 = 8;
-		int n2 = 13;
+		int n1 = 11;
+		int n2 = 9;
 		
 		Node t = td.lca(td.root, n1, n2);
         System.out.println("LCA of " + n1 + " and " + n2 + " is " + t.iData);

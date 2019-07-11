@@ -1,4 +1,4 @@
-//package linkListQuestions;
+package LinkListQuestions;
 
 import java.util.HashSet;
 
@@ -39,7 +39,7 @@ public class LinkList {
 
 		Link current = first;
 
-		while(current.idata != key){
+		while(current.data != key){
 			if(current.next == null)
 				return null;
 
@@ -54,7 +54,7 @@ public class LinkList {
 		Link current = first;
 		Link previous = first;
 		
-		while(current.idata != key){
+		while(current.data != key){
 			
 			if (current.next == null)
 			return null;
@@ -103,6 +103,7 @@ public class LinkList {
 	}
 
 	public Link reverseBetween(Link head, int m, int n) {
+		
 	    if(head == null) return null;
 	    Link dummy = new Link(0); // create a dummy node to mark the head of this list
 	    dummy.next = head;
@@ -116,10 +117,10 @@ public class LinkList {
 	    // dummy-> 1 -> 2 -> 3 -> 4 -> 5
 	    for(int i=0; i<n-m; i++)
 	    {
-	        start.next = then.next;
-	        then.next = pre.next;
-	        pre.next = then;
-	        then = start.next;
+	        start.next = then.next;    // 2 -- > 4
+	        then.next = pre.next;      // 3 --> 2
+	        pre.next = then;           // 1 -- > 3
+	        then = start.next;	         
 	    }
 	    
 	    // first reversing : dummy->1 - 3 - 2 - 4 - 5; pre = 1, start = 2, then = 4
@@ -127,20 +128,20 @@ public class LinkList {
 	    return dummy.next;
 	}
 
-	public ListNode swapPairs(ListNode head) {
-	    ListNode dummy = new ListNode(0);
-	    dummy.next = head;
-	    ListNode current = dummy;
-	    while (current.next != null && current.next.next != null) {
-	        ListNode first = current.next;
-	        ListNode second = current.next.next;
-	        first.next = second.next;
-	        current.next = second;
-	        current.next.next = first;
-	        current = current.next.next;
-	    }
-	    return dummy.next;
-	}
+//	public ListNode swapPairs(ListNode head) {
+//	    ListNode dummy = new ListNode(0);
+//	    dummy.next = head;
+//	    ListNode current = dummy;
+//	    while (current.next != null && current.next.next != null) {
+//	        ListNode first = current.next;
+//	        ListNode second = current.next.next;
+//	        first.next = second.next;
+//	        current.next = second;
+//	        current.next.next = first;
+//	        current = current.next.next;
+//	    }
+//	    return dummy.next;
+//	}
 
 
 }

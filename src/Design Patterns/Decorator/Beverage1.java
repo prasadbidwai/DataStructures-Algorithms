@@ -1,4 +1,4 @@
-public abstract class Beverage
+public abstract class Beverage1
 {
 	String description = "NO description available for";
 

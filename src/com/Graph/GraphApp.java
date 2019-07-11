@@ -7,19 +7,36 @@ public class GraphApp {
 		Graph gr = new Graph(5);
 		
 		gr.addVertex('a');
-		gr.addVertex('d');
 		gr.addVertex('b');
 		gr.addVertex('c');
+		gr.addVertex('d');
 		gr.addVertex('e');
 		//gr.addVertex('a');
 		
-		gr.addAdjecancyMatrix(0, 1);
-		gr.addAdjecancyMatrix(1, 2);
-		gr.addAdjecancyMatrix(0, 3);
-		gr.addAdjecancyMatrix(3, 4);
+		gr.addAdjecancyMatrix(0, 1);   //ab
+		gr.addAdjecancyMatrix(1, 2);   //bc
+		gr.addAdjecancyMatrix(0, 3);   //ad
+		gr.addAdjecancyMatrix(3, 4);   //de
+		gr.addAdjecancyMatrix(1, 3);   //bd
 		
+		System.out.println("Prinitng BFS now::");
+		gr.BFS();
+		
+		System.out.println("\n\nPrinting DFS now:: ");
 		gr.DFS();
-		System.out.println();
 	}
 
 }
+
+
+
+/* 
+ *		        a
+ *		       / \
+ *		      b---d
+ *		     /     \
+ *		    c		e
+ * DFS: adbce
+ * BFS: acdeb
+ */
+ 

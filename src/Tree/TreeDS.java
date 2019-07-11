@@ -137,7 +137,7 @@ Node lca(Node node, int n1, int n2) {
     }
 
     // If both n1 and n2 are greater than root, then LCA lies in right
-    if (node.iData < n1 && node.iData < n2) {
+    else if (node.iData < n1 && node.iData < n2) {
         System.out.println( node.rightChild.iData+ " "+n1+ " "+n2);
         return lca(node.rightChild, n1, n2);
 
@@ -151,7 +151,7 @@ public boolean deleteElement(int key)
 {
 	Node current = root;
 	Node parent = root;
-	boolean isLeftChild;
+	boolean isLeftChild = false;
 
 	while(current.iData != key)
 	{
@@ -166,9 +166,9 @@ public boolean deleteElement(int key)
 			current = current.rightChild;
 			isLeftChild = false;
 		}
+		
 		if(current == null)
-	
-	return false; 
+			return false; 
 	}
 
 	if(current.leftChild == null && current.rightChild == null)

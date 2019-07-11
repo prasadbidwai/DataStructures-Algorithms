@@ -49,8 +49,9 @@ public class Queue {
 	}
 	
 	public boolean isFull(){
-		
-		if (rear == nSize){
+		System.out.println("nsize:  "+nSize);
+		System.out.println("maxsize:  "+maxsize);
+		if (nSize == maxsize){
 			return true;
 		}
 		return false;

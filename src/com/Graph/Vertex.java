@@ -3,6 +3,7 @@ package com.Graph;
 public class Vertex {
 	
 	private char label;
+	private boolean isVisited;
 	
 	public char getLabel() {
 		return label;
@@ -11,9 +12,7 @@ public class Vertex {
 	public void setLabel(char label) {
 		this.label = label;
 	}
-
-	private boolean isVisited;
-	
+		
 	public boolean isVisited() {
 		return isVisited;
 	}

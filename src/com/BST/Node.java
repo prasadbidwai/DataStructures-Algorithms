@@ -6,6 +6,10 @@ public class Node {
 	Node leftChild;
 	Node rightChild;
 	
+	public Node(int key) {
+		data = key;
+	}
+	
 	public void displayNode(){
 		System.out.println(""+data);
 		

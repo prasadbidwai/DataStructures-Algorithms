@@ -1,17 +1,13 @@
 package com.MergeSort;
 
 public class MergeSart {
-
-	//	public int[] array = new int[8];
-
 	
-		public int[] array = {30, 20, 10, 90, 100, 60, 500, 200};
-		
+	public int[] array = {30, 20, 10, 90, 100, 60, 500, 200};		
 	
 	public void mergeSort(){		
 		int[] workSpace = new int[array.length];
 		recmergeSort(workSpace, 0, array.length-1);
-		printSorted(workSpace);
+		printSorted();
 	}
 
 	public void recmergeSort(int[] workspace, int lowerbound, int upperbound){
@@ -43,19 +39,19 @@ public class MergeSart {
 				workspace[j++] = array[lowptr++];
 			}
 			
-			else
-			{
+			else {
 					workspace[j++] = array[highptr++];
 			}
-		
-			while(lowptr <= mid){
-				workspace[j++] = array[lowptr++];
-			}
-			
-			while(highptr <= upperbound){
-				workspace[j++] = array[highptr++];
-			}
 		}
+		
+		while(lowptr <= mid){
+			workspace[j++] = array[lowptr++];
+		}
+			
+		while(highptr <= upperbound){
+			workspace[j++] = array[highptr++];
+		}
+		
 		
 		for(j=0; j<n; j++){
 			array[lowerbound+j] = workspace[j];
@@ -63,9 +59,9 @@ public class MergeSart {
 			
 	}
 	
-	public void printSorted(int[] workSpace){
-		for(int i = 0; i < workSpace.length; i++){
-			System.out.println(" "+workSpace[i]);
+	public void printSorted(){
+		for(int i = 0; i < array.length; i++){
+			System.out.println(" "+array[i]);
 		}
 	}
 

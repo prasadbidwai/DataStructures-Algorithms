@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class QueueUsingTwoStacks<E>
 {
 
@@ -5,7 +7,7 @@ public class QueueUsingTwoStacks<E>
     private Stack<Integer> outbox = new Stack<Integer>();
 
     public void queue(E item) {
-        inbox.push(item);
+        inbox.push((Integer) item);
     }
 
     public E dequeue() {
@@ -14,7 +16,7 @@ public class QueueUsingTwoStacks<E>
                outbox.push(inbox.pop());
             }
         }
-        return outbox.pop();
+        return (E) outbox.pop();
     }
 
 }

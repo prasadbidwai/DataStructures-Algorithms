@@ -1,4 +1,4 @@
-// Java program to detect and remove loop in linked list
+package LinkListQuestions;
  
 class LinkedListDetectLoop {
  

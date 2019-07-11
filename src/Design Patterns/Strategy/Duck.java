@@ -20,9 +20,9 @@ public abstract class Duck
 		fb = newfb; 
 	}	
 
-	public void setQuackBehavior(QuackBehavior newfb)
+	public void setQuackBehavior(QuackBehavior newqb)
 	{
-		fb = newfb; 
+		qb = newqb; 
 	}	
 
 }
