@@ -45,7 +45,6 @@ class SingletonDoubleCheck
 {
 	///Volatile keyword ensures visibility of any changes to the variable uniqueInstance across threads
 	private volatile static SingletonDoubleCheck uniqueInstance; 
-
 	
 	private SingletonDoubleCheck(){}
 

@@ -32,12 +32,12 @@ interface display
 
 class WeatherStation implements Subject
 {
-	private ArrayList observers;
+	private ArrayList<Observer> observers;
 	private int temprature, humidity, pressure;
 
 	public WeatherStation()
 	{
-		observers = new ArrayList();
+		observers = new ArrayList<Observer>();
 	}
 
 	public void registerObserver(Observer ob)

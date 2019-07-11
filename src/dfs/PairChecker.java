@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.util.HashMap;
 
 class Solution {
   public static void main(String[] args) {
@@ -24,6 +25,7 @@ class Pair{
 class PairChecker{
   
   public Map<Pair, Integer> hm = new HashMap<Pair, Integer>();
+  
   public Map<Integer, Integer> hmTest = new HashMap<Integer, Integer>();
 
   int pair, sum;

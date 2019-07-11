@@ -1,7 +1,7 @@
 class HashEntry
 {
 	private int key;
-	private int value;
+	private int valueOf;
 
 	public HashEntry(int a, int b)
 	{
@@ -16,6 +16,6 @@ class HashEntry
 
 	public int getValue()
 	{
-		return value;
+		return valueOf;
 	}
 }
