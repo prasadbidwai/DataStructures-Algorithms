@@ -52,7 +52,6 @@ class PairChecker{
     hmTest.put(it1.getKey().second, it1.getKey().first);
   }
   
-    
 //    return true;
     return (arr.length == hmTest.size());
     
