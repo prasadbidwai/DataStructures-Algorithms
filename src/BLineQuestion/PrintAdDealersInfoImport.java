@@ -9,22 +9,15 @@ public class PrintAdDealersInfoImport {
 	static Hashtable<Integer, List<Integer>> studentFriendsMapping = new Hashtable<Integer, List<Integer>>();
 	static HashSet<Integer> studentsChecked = new HashSet<Integer>();
 	static int circlesCount = 0;
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
 		String[] friends = new String[5];
 		int length  = friends.length;
-		String row0 = "YYNNN";
-		String row1 = "YYNNN";
-		String row2 = "NNYNN";
-		String row3 = "NNNYN";
-		String row4 = "NNNNY";
-		friends[0] = row0;
-		friends[1] = row1;
-		friends[2] = row2;
-		friends[3] = row3;
-		friends[4] = row4;
+		friends[0] = "YYNNN";
+		friends[1] = "YYNNN";
+		friends[2] = "NNYNN";
+		friends[3] = "NNNYN";
+		friends[4] = "NNNNY";
 		
 		for(int i = 0; i<length;i++){
 			studentFriendsMapping.put(i, new ArrayList<Integer>());
@@ -69,10 +62,7 @@ public class PrintAdDealersInfoImport {
 	}
 
 	private static boolean isStudentChecked(int key) {
-		if(studentsChecked.contains(key)){
-			return true;
-		}
-		return false;
+		return studentsChecked.contains(key);
 	}
 
 }

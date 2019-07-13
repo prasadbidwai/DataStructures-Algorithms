@@ -93,6 +93,7 @@ class HandHeldDevice implements Observer, display
 
 	public void displayContent()
 	{
+		System.out.println("HandHeldDevice received updated readings::");
 		System.out.println("temprature, humidity, pressure : " + temprature +" "+ humidity +" "+ pressure);
 	}
 

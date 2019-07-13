@@ -2,7 +2,10 @@
 // HashMap operations: To find the symmetric array elements, to find the largest sub array with zero sum.   
 
 import java.io.*;
+
 import java.util.*;
+import java.util.HashMap;
+
 
 class HashProbs
 {
@@ -10,16 +13,16 @@ class HashProbs
 public void getItinerary(Map<String, String> ipMap)
 {
   String start = null;
-  Map<String, String> rm = new HashMap<String, String>();
+  Map<String, String> reverseMap = new java.util.HashMap<String, String>();
 
-  for(Map.Entry<String, String> it: ipMap.entrySet()){
-    rm.put(it.getValue(), it.getKey());
+  for(Map.Entry<String, String> it: ipMap.entrySet()) {
+	  reverseMap.put(it.getValue(), it.getValue());
   }
 
   for(Map.Entry<String, String> it: ipMap.entrySet())
   { 
     String current = it.getKey();
-    if(!rm.containsKey(current))
+    if(!reverseMap.containsKey(current))
     {
       start = current;
       break;
@@ -40,7 +43,7 @@ public void getItinerary(Map<String, String> ipMap)
   public static void findSymmtricPairs(int[][] test)
   {
 
-    HashMap<Integer, Integer> theMap= new HashMap<Integer, Integer>();
+    Map<Integer, Integer> theMap= new java.util.HashMap<Integer, Integer>();
 
     for (int i = 0 ; i < test.length ;i++ ) 
     {
@@ -67,7 +70,7 @@ public void getItinerary(Map<String, String> ipMap)
 public static int largestZeroSumSubArray(int[] arr)
 {
   // Creates an empty hashMap hM
-  HashMap<Integer, Integer> hM = new HashMap<Integer, Integer>();
+  Map<Integer, Integer> hM = new java.util.HashMap<Integer, Integer>();
  
   int sum = 0;      // Initialize sum of elements
   int max_len = 0;  // Initialize result
@@ -100,7 +103,7 @@ public static int largestZeroSumSubArray(int[] arr)
 
 public void findPairs(int[] test){
  
-  Map<Integer, Pair> fpmap = new HashMap<Integer, Pair>();
+  Map<Integer, Pair> fpmap = new java.util.HashMap<Integer, Pair>();
   
   for(int i = 0 ; i < test.length ; i ++)
   {
@@ -168,10 +171,10 @@ public void findPairs(int[] test){
      
 }
 
-class Pair{
+class ThePair{
   int first, second;
   
-  Pair(int a, int b){
+  ThePair(int a, int b){
     first = a;
     second = b; 
   }
@@ -185,7 +188,7 @@ class HashMapOps{
     Map<String, String> dataSet = new HashMap<String, String>();
     
         dataSet.put("Chennai", "Banglore");
-        dataSet.put("Bombay", "Delhi");
+        dataSet.put("Mumbai", "Delhi");
         dataSet.put("Goa", "Chennai");
         dataSet.put("Delhi", "Goa");
     

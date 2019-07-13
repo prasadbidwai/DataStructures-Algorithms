@@ -19,7 +19,7 @@ public boolean chckStrings(String s1, String s2)
         System.out.println(s1c.length()+ " "+s2c.length() + "lenghts are not same");
         return false;
     }
-    System.out.println(s1c+"  "+s2c);
+    System.out.println(s1+"  "+s2);
     return s1c.equals(s2c);
 }
 
@@ -37,14 +37,14 @@ static void isAnagram(String s1, String s2)
             status = false;
         }
         else
-        {
+        { 
             char[] s1Array = copyOfs1.toCharArray();
             StringBuilder sb = new StringBuilder(copyOfs2);
- 
+//            System.out.println("stringBuilder sb:: "+sb);
             for (char c : s1Array)
             {
                 int index = sb.indexOf(String.valueOf(c));
- //               System.out.println(c+":  "+index);
+//                System.out.println(c+":  "+index);
  
                 if (index != -1)
                 {
@@ -60,6 +60,7 @@ static void isAnagram(String s1, String s2)
         if(status)
         {
             System.out.println(s1+" and "+s2+" are anagrams");
+            System.out.println("length of sb:");
         }
         else
         {
@@ -75,13 +76,13 @@ static void isAnagram(String s1, String s2)
     
         ChckAnagrams cka = new ChckAnagrams();
 
-        System.out.println(cka.chckStrings("Mother In Law", "Hitler Woman"));
+        System.out.println(cka.chckStrings("Mother In Law", "Hitlerr Woman"));
         System.out.println(cka.chckStrings("a bcdef", "fdea bc"));
         System.out.println(cka.chckStrings("SiLeNt CAT", "LisTen AcT"));
 
         System.out.println("\nIs Anagram Method ::");
 
-        isAnagram("Mother In Law ", "Hitler Woman");
+        isAnagram("Mother IIn Law ", "Hiitler Woman");
         isAnagram("aaabbbccd", "bbbccd aaa");
 
     }

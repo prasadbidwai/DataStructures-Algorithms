@@ -44,8 +44,8 @@ class StringOpsApp {
 //
 //  // call to function to find the longest palindromic substring
 //  System.out.println("\nLongest palindromic Sub Strings:: ");
-  System.out.println(longestPalindromeString("1234"));
-//  System.out.println(longestPalindromeString("12321"));
+//  System.out.println(longestPalindromeString("1234"));
+  System.out.println(longestPalindromeString("12321113111"));
 //  System.out.println(longestPalindromeString("9912321456"));
 //  System.out.println(longestPalindromeString("9912333321456"));
 //  System.out.println(longestPalindromeString("12145445499"));

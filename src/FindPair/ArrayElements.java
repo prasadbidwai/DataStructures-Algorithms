@@ -1,13 +1,15 @@
 import java.io.*;
 import java.util.*;
 
+
 class ArrayElements{
 
     boolean finddPair(int[] arr)
     {
-        // Create an empty Hash to store mapping from sum to
-        // pair indexes
-        HashMap<Integer,Pair> map = new HashMap<Integer,Pair>();
+        // Create an empty Hash to store mapping from sum to pair indexes
+        
+        Map<Integer, Pair> map = new java.util.HashMap<Integer, Pair>();
+        
         int n=arr.length;
         
         // Traverse through all possible pairs of arr[]
