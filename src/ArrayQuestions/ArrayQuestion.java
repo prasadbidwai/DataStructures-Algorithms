@@ -35,7 +35,7 @@
         
         // Sort array in wave form:
         // Input:  arr[] = {3 6 5 10 7 20 25}
-        // Output: arr[] = {6 3 10 5 20 7 25}
+        // Output: arr[] = {6 3 10 5 20 7 25 }
         int[] waveSortArr = {3, 6, 5, 10, 7, 20, 25};
         sortInWaveFormat(waveSortArr);
       }
