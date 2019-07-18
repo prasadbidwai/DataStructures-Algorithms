@@ -1,10 +1,6 @@
 package trie;
 
-import static org.junit.Assert.*;
-
 import java.util.HashMap;
-
-import org.junit.Test;
 
 /**
  * LeetCode Problem 211: Add and Search Word - Data structure design
@@ -21,7 +17,9 @@ public class WordDictionary {
 	/** Adds a word into the data structure. */
 	public void addWord(String word) {
 		word = word.concat("/");
+		System.out.println("word after concatination afer add:: "+word);
 		HashMap<Character, TrieNode> currentLevel = root.children;
+		
 		for (char c : word.toCharArray()) {
 			if (!currentLevel.containsKey(c)) {
 				TrieNode tempNode = new TrieNode();
@@ -38,8 +36,10 @@ public class WordDictionary {
 	 */
 	public boolean search(String word) {
 		word = word.concat("/");
+		System.out.println("word after concatination:: "+word);
 		HashMap<Character, TrieNode> currentLevel = root.children;
 		char[] wordArray = word.toCharArray();
+		
 		for (int i = 0; i < wordArray.length; i++) {
 			char c = wordArray[i];
 			if (c == '.') {
@@ -84,34 +84,19 @@ public class WordDictionary {
 	 * WordDictionary obj = new WordDictionary(); obj.addWord(word); boolean
 	 * param_2 = obj.search(word);
 	 */
-	@Test
-	public void test() {
+	public static void main(String[]args) {
 		WordDictionary obj = new WordDictionary();
 		obj.addWord("bad");
 		obj.addWord("dad");
 		obj.addWord("mad");
-		assertEquals(false, obj.search("pad"));
-		assertEquals(true, obj.search("bad"));
-		assertEquals(true, obj.search(".ad"));
-		assertEquals(true, obj.search("b.."));
-	}
+		
+		System.out.println(obj.search(".a."));
+		System.out.println(obj.search("bad"));
+		System.out.println(obj.search("..d."));
+		System.out.println(obj.search("a"));
+		System.out.println(obj.search(".ad"));
+		System.out.println(obj.search("b.."));
 
-	@Test
-	public void test2() {
-		WordDictionary obj = new WordDictionary();
-		obj.addWord("at");
-		obj.addWord("and");
-		obj.addWord("an");
-		obj.addWord("add");
-		assertEquals(false, obj.search("a"));
-		assertEquals(false, obj.search(".at"));
-		obj.addWord("bat");
-		assertEquals(true, obj.search(".at"));
-		assertEquals(true, obj.search("an."));
-		assertEquals(false, obj.search("a.d."));
-		assertEquals(false, obj.search("b."));
-		assertEquals(true, obj.search("a.d"));
-		assertEquals(false, obj.search("."));
 	}
 
 }

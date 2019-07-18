@@ -15,7 +15,13 @@ class StringOpsApp {
   
   public static void main(String[] args) {
       int[] num = {1,2,4,5};
-    
+  
+  System.out.println(lessthanthree("aaabbbaaabcccc"));
+  System.out.println(lessthanthree("xxxyyyazzz"));
+  
+  lexicographicallySmallest("abcd");
+  lexicographicallySmallest("codility");
+  
   System.out.println(sayInt(30));
   System.out.println("Calling search insert :: "+searchInsert(num,3));
       
@@ -179,7 +185,61 @@ public static String sayInt(int n){
       return corret;
 
     }
+    
+    //If a string has 3 or more than 3 consecutive same characters, compress the string with only 2 occurences.
+    //Convert aaabbbaaabcccc to aabbaabcc
+    //Convert xxxyyyazzz to xxyyazz
 
+    public static String lessthanthree(String input) {
+    	System.out.println("Called lessthanthree method, compressing string with 3 or more occurences of same chars");
+    	StringBuilder sb = new StringBuilder();
+    	Character first = input.charAt(0);
+    	Integer count = 1;
+    	sb.append(first);
+    	for (int i = 1 ; i < input.length() ;i++) {
+    		if (input.charAt(i)==first) {
+    			count++;
+    			
+    		if (count<3) {
+    			sb.append(input.charAt(i));    			
+    		}
+    		else if (count>=3) {
+    		
+    		}
+    			
+    		}else
+    		{
+    			first = input.charAt(i);
+    			count = 1;
+    			sb.append(first);
+    		}
+    	}
+    	return sb.toString();
+    }
+    
+    public static String lexicographicallySmallest(String input) {
+    	
+    	StringBuilder sb = new StringBuilder();
+    	
+    	int largest = input.charAt(0);
+    	for (int i = 0 ; i < input.length(); i++) {    		
+    		int current = input.charAt(i);
+    		if (largest < current) {
+    			largest = current;
+    		} 
+    	}    	
+    	
+    	for(int j = 0 ; j< input.length();j++) {
+    		int current = input.charAt(j);
+    		if (current==largest){    			
+    		}else {
+    			sb.append(input.charAt(j));
+    		}
+    	}
+    	
+    	System.out.println("\nlexicallySmallest for input: "+input+" is: "+sb.toString());
+    	return sb.toString();
+    }
 }
   
 
