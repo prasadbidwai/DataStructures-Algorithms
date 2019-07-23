@@ -17,7 +17,6 @@ public class WordDictionary {
 	/** Adds a word into the data structure. */
 	public void addWord(String word) {
 		word = word.concat("/");
-		System.out.println("word after concatination afer add:: "+word);
 		HashMap<Character, TrieNode> currentLevel = root.children;
 		
 		for (char c : word.toCharArray()) {
@@ -36,7 +35,6 @@ public class WordDictionary {
 	 */
 	public boolean search(String word) {
 		word = word.concat("/");
-		System.out.println("word after concatination:: "+word);
 		HashMap<Character, TrieNode> currentLevel = root.children;
 		char[] wordArray = word.toCharArray();
 		

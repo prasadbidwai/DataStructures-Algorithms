@@ -1,11 +1,14 @@
 /* 
-progrm for String operations 
+Program for String operations 
 
 String operations: 
 1. find longest palindromic substring 
 2. String compression, 
 3. Check if a String is rotation of other, 
-4. Check if String has unique chracters 
+4. Check if String has unique chracters
+5. Generate lexicographicallySmallest string by removing one character
+6. Logic to compress the string with no occurence exceeding more than three
+7. Print all the Permutations of a String
 */
 
 import java.io.*;
@@ -19,44 +22,33 @@ class StringOpsApp {
   System.out.println(lessthanthree("aaabbbaaabcccc"));
   System.out.println(lessthanthree("xxxyyyazzz"));
   
-  lexicographicallySmallest("abcd");
-  lexicographicallySmallest("codility");
+  lexicographicallySmallest("abfd");
+  
   
   System.out.println(sayInt(30));
   System.out.println("Calling search insert :: "+searchInsert(num,3));
       
   String test = "aabbbbcddddaaaaa";
   stringCompres(test);
-//
+
   String string1 = "waterbottle";
   String string2 = "erbottlewat";
 
   System.out.println(string1+" is rotation of word "+string2+":: "+ checkIfRotation(string2, string1));
-//
-//  assert((checkIfRotation(string2, string1))) == true;
-//
+
   String chck = "parallel";
-//  String chck2 = "uniqe";
-//
-//  System.out.println("\nString parallel has all unique Characters:: ");
   System.out.println(chckUnique(chck));
-//
-//  System.out.println("\nString uniqe has all unique Characters:: ");
-//  System.out.println(chckUnique(chck2));
-//
-//  System.out.println("\nchecking if String sracecars is palindrome:: ");
+
 //  String orig = "sracecars";
 //  System.out.println(isPalindrome(orig));
-//
-//  // call to function to find the longest palindromic substring
-//  System.out.println("\nLongest palindromic Sub Strings:: ");
-//  System.out.println(longestPalindromeString("1234"));
-  System.out.println(longestPalindromeString("12321113111"));
-//  System.out.println(longestPalindromeString("9912321456"));
-//  System.out.println(longestPalindromeString("9912333321456"));
-//  System.out.println(longestPalindromeString("12145445499"));
-  // end of call to function to find the longest palindromic substring
 
+  // call to function to find the longest palindromic substring
+  System.out.println(longestPalindromeString("12321113111"));
+  
+  String to_permute = "abcd";
+  System.out.println("\nPrinting all the permutations for: "+to_permute);
+  permute("abcd", 0, to_permute.length()-1);
+  
   }
 
 //code for longest palindromic substring
@@ -197,16 +189,14 @@ public static String sayInt(int n){
     	Integer count = 1;
     	sb.append(first);
     	for (int i = 1 ; i < input.length() ;i++) {
-    		if (input.charAt(i)==first) {
+    		if (input.charAt(i)==first) 
+    		{
     			count++;
     			
-    		if (count<3) {
-    			sb.append(input.charAt(i));    			
-    		}
-    		else if (count>=3) {
-    		
-    		}
-    			
+	    		if (count<3) {
+	    			sb.append(input.charAt(i));    			
+	    		}else if (count>=3) {	    		
+	    		}    			
     		}else
     		{
     			first = input.charAt(i);
@@ -216,6 +206,8 @@ public static String sayInt(int n){
     	}
     	return sb.toString();
     }
+    
+    //Function to return lexicographicallySmallest substring by removing a single alphabet
     
     public static String lexicographicallySmallest(String input) {
     	
@@ -240,6 +232,32 @@ public static String sayInt(int n){
     	System.out.println("\nlexicallySmallest for input: "+input+" is: "+sb.toString());
     	return sb.toString();
     }
+
+    // This Method Generates all the permutation of the give input string
+    private static void permute(String str, int l, int r) 
+    {     	    	
+        if (l == r) 
+            System.out.println("permutation String:: "+str); 
+        else
+        { 
+            for (int i = l; i <= r; i++) 
+            { 
+            	str = swap(str,l,i);        	
+                permute(str, l+1, r); 
+                str = swap(str,l,i);             
+            } 
+        } 
+    } 
+
+    public static String swap(String a, int i, int j) 
+    { 
+        char temp; 
+        char[] charArray = a.toCharArray(); 
+        temp = charArray[i] ; 
+        charArray[i] = charArray[j]; 
+        charArray[j] = temp; 
+        return String.valueOf(charArray); 
+     }
 }
   
 
